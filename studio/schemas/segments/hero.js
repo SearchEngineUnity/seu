@@ -5,9 +5,14 @@ export default {
   fields: [
     {
       name: 'title',
-      title: 'Segment Title',
+      title: 'Title',
       type: 'string',
       validation: (Rule) => [Rule.required().error('Field is required')],
+    },
+    {
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'string',
     },
   ],
   preview: {
