@@ -8,6 +8,11 @@ export default {
       type: 'reference',
       to: [{ type: 'page' }, { type: 'guide' }],
     },
+    {
+      name: 'isButton',
+      type: 'boolean',
+      title: 'Is it in the Button Style?',
+    },
   ],
   preview: {
     select: {

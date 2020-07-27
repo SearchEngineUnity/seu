@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
   //       }
   //     }
   //   }
-  //   menu: sanityNavMenu(title: {eq: $menu}) {
+  //   menu: sanitymainNavbar(title: {eq: $menu}) {
   //     title
   //     menu {
   //       ... on SanityNavGroup {

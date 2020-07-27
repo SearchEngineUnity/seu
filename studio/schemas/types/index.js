@@ -15,6 +15,8 @@ export { default as linkSet } from './linkSet';
 export { default as meta } from './meta';
 export { default as navGroup } from './navGroup';
 export { default as navItem } from './navItem';
+export { default as navJumpLink } from './navJumpLink';
+export { default as navLogo } from './navLogo';
 export { default as openGraph } from './openGraph';
 export { default as simpleBlockContent } from './simpleBlockContent';
 export { default as tocLink } from './tocLink';
