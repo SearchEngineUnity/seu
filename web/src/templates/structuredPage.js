@@ -189,7 +189,7 @@ export default ({ data }) => {
                         Email <input type="email" name="email" />
                       </label>
                     </p>
-                    <ReCAPTCHA sitekey="6LdeiLcZAAAAAK67SU-GE4pPdI5pstEeE_bDra8d" />
+                    <ReCAPTCHA sitekey="6LdeiLcZAAAAAE8ssfyByzkOZyBdQpzaaOi1qhnl" />
                     <p>
                       <button type="submit">Send</button>
                     </p>
