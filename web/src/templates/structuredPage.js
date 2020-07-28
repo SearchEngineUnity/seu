@@ -188,7 +188,8 @@ export default ({ data }) => {
                         Email <input type="email" name="email" />
                       </label>
                     </p>
-                    <div data-netlify-recaptcha="true" />
+                    {/* eslint-disable-next-line react/self-closing-comp */}
+                    <div data-netlify-recaptcha="true"></div>
                     <p>
                       <button type="submit">Send</button>
                     </p>
