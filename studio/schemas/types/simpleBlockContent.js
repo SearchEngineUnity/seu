@@ -1,4 +1,4 @@
-import { FaRegSmile, FaExternalLinkAlt, FaLink } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaLink } from 'react-icons/fa';
 
 export default {
   name: 'simpleBlockContent',
@@ -7,7 +7,6 @@ export default {
     {
       type: 'block',
       styles: [],
-      lists: [],
       marks: {
         decorators: [
           { title: 'Strong', value: 'strong' },

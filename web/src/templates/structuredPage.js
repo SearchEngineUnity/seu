@@ -19,12 +19,14 @@ export const query = graphql`
         ... on SanityGrid {
           _key
           _type
+          title
+          subtitle
+          leader
           col
           design
-          title
-          subTitle
           cards {
             _key
+            title
             cardImage {
               alt
               image {
@@ -35,43 +37,62 @@ export const query = graphql`
                 }
               }
             }
-            description
-            title
-            btnText
-            cardLink {
-              externalLink {
-                href
-              }
-              internalLink {
-                reference {
-                  ... on SanityGuide {
-                    _type
-                    slug {
-                      current
-                    }
-                  }
-                  ... on SanityMpGuide {
-                    _type
-                    slug {
-                      current
-                    }
-                  }
-                  ... on SanityPage {
-                    _type
-                    slug {
-                      current
-                    }
-                  }
-                }
-              }
-            }
           }
-          _rawFooter(resolveReferences: { maxDepth: 10 })
         }
         ... on SanityHero {
           _key
           _type
           title
+          _rawText(resolveReferences: { maxDepth: 20 })
+          background {
+            asset {
+              fluid {
+                src
+              }
+            }
+          }
+        }
+        ... on SanityLeftRight {
+          _key
+          _type
+          leader
+          order
+          subtitle
+          title
+          set {
+            imageBox {
+              _key
+              alt
+              image {
+                asset {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
+            _key
+            textBox {
+              text {
+                _key
+                _type
+                style
+                list
+                _rawChildren
+              }
+              _key
+              _rawText(resolveReferences: { maxDepth: 20 })
+              leaderIcon
+              leaderText
+              subtitle
+              title
+            }
+          }
+        }
+        ... on SanityUnbounceCTA {
+          _key
+          _type
+          link
         }
       }
       slug {
@@ -113,6 +134,12 @@ export default ({ data }) => {
         {data.page.segments.map((segment) => {
           const { _type } = segment;
           switch (_type) {
+            case 'hero':
+              return (
+                <div key={segment._key}>This is the Hero segment</div>
+                // <Hero id={section._key} {...mapHeroToProps(section)} />
+              );
+
             case 'grid':
               return (
                 // <div>This is the Grid section</div>
@@ -120,14 +147,20 @@ export default ({ data }) => {
                 <div key={segment._key}>This is the Grid section</div>
               );
 
-            case 'hero':
+            case 'leftRight':
               return (
-                <div key={segment._key}>This is the Hero section</div>
+                <div key={segment._key}>This is the LR segment</div>
+                // <Hero id={section._key} {...mapHeroToProps(section)} />
+              );
+
+            case 'unbounceCTA':
+              return (
+                <div key={segment._key}>This is the unbounceCTA segment</div>
                 // <Hero id={section._key} {...mapHeroToProps(section)} />
               );
 
             default:
-              return <div>Still under development</div>;
+              return <div> Still under development</div>;
           }
         })}
       </main>
