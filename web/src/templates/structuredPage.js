@@ -162,7 +162,7 @@ export default ({ data }) => {
               return (
                 <div key={segment._key}>
                   <p>This is the unbounceCTA segment</p>
-                  <form name="contact" method="POST" netlify>
+                  <form name="contact" method="POST" data-netlify="true">
                     <p>
                       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                       <label>
