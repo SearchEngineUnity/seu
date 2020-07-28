@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+import ReCAPTCHA from 'react-google-recaptcha';
 import Layout from '../containers/layout';
 import SEO from '../components/Seo';
 // import Grid from '../components/Grid';
@@ -188,8 +189,7 @@ export default ({ data }) => {
                         Email <input type="email" name="email" />
                       </label>
                     </p>
-                    {/* eslint-disable-next-line react/self-closing-comp */}
-                    <div data-netlify-recaptcha="true"></div>
+                    <ReCAPTCHA sitekey="6LdeiLcZAAAAAK67SU-GE4pPdI5pstEeE_bDra8d" />
                     <p>
                       <button type="submit">Send</button>
                     </p>
