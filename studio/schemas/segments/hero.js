@@ -2,6 +2,17 @@ export default {
   name: 'hero',
   title: 'Hero',
   type: 'document',
+  fieldsets: [
+    {
+      name: 'background',
+      title: 'Backgound',
+      description: 'Background Image will always override Background Color',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+    },
+  ],
   fields: [
     {
       name: 'title',
@@ -21,9 +32,16 @@ export default {
       type: 'simpleBlockContent',
     },
     {
-      name: 'background',
-      title: 'Background',
+      name: 'backgroundImage',
+      title: 'Background Image',
       type: 'image',
+      fieldset: 'background',
+    },
+    {
+      name: 'backgroundColor',
+      title: 'Background Color',
+      type: 'color',
+      fieldset: 'background',
     },
   ],
   preview: {
