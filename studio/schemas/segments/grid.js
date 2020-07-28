@@ -4,15 +4,20 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'leader',
+      title: 'Leader Text',
+      type: 'string',
+    },
+    {
       name: 'title',
-      title: 'Segment Title',
+      title: 'Title',
       type: 'string',
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
-      name: 'subTitle',
-      title: 'Segment Subtitle',
-      type: 'string',
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'text',
     },
     {
       name: 'design',
@@ -20,8 +25,9 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'Image + Title + Clickable', value: '1' },
-          { title: 'Image + Title + Non-Clickable', value: '2' },
+          { title: 'Square card with border', value: '1' },
+          { title: 'Circle Image no border', value: '2' },
+          { title: 'Logos only', value: '3' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
@@ -31,7 +37,13 @@ export default {
       title: 'Number of column(s)',
       type: 'string',
       options: {
-        list: ['6', '4', '3', '2', '1'],
+        list: [
+          { title: '6', value: 'col-lg-2 col-md-4 col-sm-6 col-12' },
+          { title: '4', value: 'col-lg-3 col-md-6 col-sm-12' },
+          { title: '3', value: 'col-lg-4 col-md-6 col-sm-12' },
+          { title: '2', value: 'col-lg-6 col-md-6 col-sm-12' },
+          { title: '1', value: 'col-12' },
+        ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
@@ -44,7 +56,7 @@ export default {
     },
     {
       name: 'footer',
-      title: 'Segment footer',
+      title: 'Footer',
       type: 'simpleBlockContent',
     },
   ],
