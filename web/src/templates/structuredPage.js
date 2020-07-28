@@ -162,7 +162,20 @@ export default ({ data }) => {
               return (
                 <div key={segment._key}>
                   <p>This is the unbounceCTA segment</p>
-                  <form name="contact" method="POST" data-netlify="true">
+                  <form
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    netlify-honeypot="bot-field"
+                    data-netlify-recaptcha="true"
+                  >
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p className="hidden">
+                      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                      <label>
+                        Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
+                      </label>
+                    </p>
                     <p>
                       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                       <label>
@@ -175,6 +188,7 @@ export default ({ data }) => {
                         Email <input type="email" name="email" />
                       </label>
                     </p>
+                    <div data-netlify-recaptcha="true" />
                     <p>
                       <button type="submit">Send</button>
                     </p>
