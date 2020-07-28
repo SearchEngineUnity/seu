@@ -170,7 +170,7 @@ export default ({ data }) => {
                     data-netlify-recaptcha="true"
                   >
                     <input type="hidden" name="form-name" value="contact" />
-                    <p className="hidden">
+                    <p className="hidden" style={{ display: 'none' }}>
                       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                       <label>
                         Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
