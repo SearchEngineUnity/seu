@@ -162,7 +162,23 @@ export default ({ data }) => {
               return (
                 <div key={segment._key}>
                   <p>This is the unbounceCTA segment</p>
-                  <iframe src="http://unbouncepages.com/seu-form/" title="SEU contact us form" />
+                  <form name="contact" netlify>
+                    <p>
+                      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                      <label>
+                        Name <input type="text" name="name" />
+                      </label>
+                    </p>
+                    <p>
+                      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                      <label>
+                        Email <input type="email" name="email" />
+                      </label>
+                    </p>
+                    <p>
+                      <button type="submit">Send</button>
+                    </p>
+                  </form>
                 </div>
                 // <Hero id={section._key} {...mapHeroToProps(section)} />
               );
