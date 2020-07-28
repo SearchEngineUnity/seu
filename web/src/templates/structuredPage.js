@@ -163,6 +163,7 @@ export default ({ data }) => {
                 <div key={segment._key}>
                   <p>This is the unbounceCTA segment</p>
                   <form name="contact" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contact" />
                     <p>
                       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                       <label>
