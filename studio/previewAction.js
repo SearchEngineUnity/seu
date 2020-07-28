@@ -10,11 +10,11 @@ export default function PreviewAction(props) {
   if (type === 'page' || type === 'guide') {
     if (draft) {
       if (props.draft.slug) {
-        slug = props.draft.slug.current === '/' ? '/' : props.draft.slug.current;
+        slug = props.draft.slug.current === '/' ? '' : props.draft.slug.current;
       }
     } else if (published) {
       if (props.published.slug) {
-        slug = props.published.slug.current === '/' ? '/' : props.published.slug.current;
+        slug = props.published.slug.current === '/' ? '' : props.published.slug.current;
       }
     }
   }

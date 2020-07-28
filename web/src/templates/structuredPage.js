@@ -44,12 +44,17 @@ export const query = graphql`
           _type
           title
           _rawText(resolveReferences: { maxDepth: 20 })
-          background {
+          backgroundImage {
             asset {
               fluid {
                 src
               }
             }
+            _type
+          }
+          backgroundColor {
+            _type
+            hex
           }
         }
         ... on SanityLeftRight {
@@ -155,7 +160,10 @@ export default ({ data }) => {
 
             case 'unbounceCTA':
               return (
-                <div key={segment._key}>This is the unbounceCTA segment</div>
+                <div key={segment._key}>
+                  <p>This is the unbounceCTA segment</p>
+                  <iframe src="http://unbouncepages.com/seu-form/" title="SEU contact us form" />
+                </div>
                 // <Hero id={section._key} {...mapHeroToProps(section)} />
               );
 
