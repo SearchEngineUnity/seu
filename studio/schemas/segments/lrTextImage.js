@@ -1,8 +1,15 @@
 export default {
-  name: 'leftRight',
-  title: 'LR',
+  name: 'lrTextImage',
+  title: 'LR Text Image',
   type: 'document',
   fields: [
+    {
+      name: 'idTag',
+      title: 'ID',
+      type: 'string',
+      description: 'Please use "-" in place of space',
+      validation: (Rule) => [Rule.required().error('Field is required')],
+    },
     {
       name: 'leader',
       title: 'Leader text',
@@ -20,20 +27,23 @@ export default {
     },
     {
       name: 'order',
-      title: 'LR Order',
+      title: 'Default text on left. Set true if image on left',
+      type: 'boolean',
+    },
+    {
+      name: 'textDesign',
+      title: 'Text Design',
       type: 'string',
       options: {
-        list: [
-          { title: 'Start Text Box left', value: 'text' },
-          { title: 'Start Image Box Left', value: 'image' },
-        ],
+        list: [{ title: 'SEU LP', value: '1' }],
       },
+      validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
       name: 'set',
       title: 'Set',
       type: 'array',
-      of: [{ type: 'lrImageText' }],
+      of: [{ type: 'textImageSet' }],
     },
     {
       name: 'footer',

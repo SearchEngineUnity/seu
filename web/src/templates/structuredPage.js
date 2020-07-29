@@ -20,6 +20,7 @@ export const query = graphql`
         ... on SanityGrid {
           _key
           _type
+          idTag
           title
           subtitle
           leader
@@ -43,6 +44,7 @@ export const query = graphql`
         ... on SanityHero {
           _key
           _type
+          idTag
           title
           _rawText(resolveReferences: { maxDepth: 20 })
           backgroundImage {
@@ -58,13 +60,15 @@ export const query = graphql`
             hex
           }
         }
-        ... on SanityLeftRight {
+        ... on SanityLrTextImage {
           _key
           _type
+          idTag
           leader
           order
           subtitle
           title
+          textDesign
           set {
             imageBox {
               _key
@@ -95,10 +99,36 @@ export const query = graphql`
             }
           }
         }
-        ... on SanityUnbounceCTA {
+        ... on SanityCtaForm {
           _key
           _type
-          link
+          idTag
+          title
+          subtitle
+          from {
+            submit
+            name
+            formFields {
+              ... on SanityInput {
+                _key
+                _type
+                inputType
+                label
+                name
+                placeholder
+                required
+              }
+              ... on SanityTextarea {
+                _key
+                _type
+                label
+                name
+                required
+                rows
+                placeholder
+              }
+            }
+          }
         }
       }
       slug {
@@ -159,10 +189,10 @@ export default ({ data }) => {
                 // <Hero id={section._key} {...mapHeroToProps(section)} />
               );
 
-            case 'unbounceCTA':
+            case 'ctaForm':
               return (
                 <div key={segment._key}>
-                  <p>This is the unbounceCTA segment</p>
+                  <p>This is the cta form segment</p>
                   <form
                     name="contact"
                     method="POST"
