@@ -14,7 +14,7 @@ export { default as imageSet } from './imageSet';
 export { default as input } from './input';
 export { default as internalLink } from './internalLink';
 export { default as linkSet } from './linkSet';
-export { default as lrImageText } from './lrImageText';
+export { default as lrImageText } from './textImageSet';
 export { default as meta } from './meta';
 export { default as navGroup } from './navGroup';
 export { default as navItem } from './navItem';

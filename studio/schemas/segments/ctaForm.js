@@ -4,6 +4,13 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'idTag',
+      title: 'ID',
+      type: 'string',
+      description: 'Please use "-" in place of space',
+      validation: (Rule) => [Rule.required().error('Field is required')],
+    },
+    {
       name: 'title',
       title: 'Title',
       type: 'string',

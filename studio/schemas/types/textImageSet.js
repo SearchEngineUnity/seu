@@ -1,6 +1,6 @@
 export default {
-  name: 'lrImageText',
-  title: 'LR - Image and Text',
+  name: 'textImageSet',
+  title: 'Text Image Set',
   type: 'object',
   fields: [
     {

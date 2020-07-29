@@ -33,6 +33,7 @@ export default {
   preview: {
     select: {
       title: 'title',
+      media: 'cardImage.image',
     },
   },
 };
