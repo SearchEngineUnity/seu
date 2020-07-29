@@ -3,32 +3,11 @@ import { Form, Button, Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 function CtaForm({ id, title, subtitle, form }) {
-  const [validated, setValidated] = useState(false);
-
-  const handleSubmit = (event) => {
-    const submitForm = event.currentTarget;
-    if (submitForm.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    setValidated(true);
-  };
-
   return (
     <Container id={`#${id}`}>
       <h2>{title}</h2>
       {subtitle ? <p>{subtitle}</p> : null}
-      <Form
-        name={form.name}
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        data-netlify-recaptcha="true"
-        noValidate
-        validated={validated}
-        onSubmit={handleSubmit}
-      >
+      <Form name={form.name} method="POST" data-netlify="true" netlify-honeypot="bot-field">
         <p className="hidden" style={{ display: 'none' }}>
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
           <label>
@@ -62,10 +41,7 @@ function CtaForm({ id, title, subtitle, form }) {
             </Form.Group>
           );
         })}
-
-        <p>
-          <Button type="submit">{form.submit}</Button>
-        </p>
+        <Button type="submit">{form.submit}</Button>
       </Form>
     </Container>
   );
