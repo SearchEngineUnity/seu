@@ -23,7 +23,12 @@ function CtaForm({ id, title, subtitle, form }) {
             return (
               <Form.Group controlId={name} key={_key}>
                 <Form.Label>{label}</Form.Label>
-                <Form.Control type={inputType} placeholder={placeholder} required={required} />
+                <Form.Control
+                  type={inputType}
+                  placeholder={placeholder}
+                  required={required}
+                  name={name}
+                />
               </Form.Group>
             );
           }
@@ -37,6 +42,7 @@ function CtaForm({ id, title, subtitle, form }) {
                 rows={rows}
                 placeholder={placeholder}
                 required={required}
+                name={name}
               />
             </Form.Group>
           );
