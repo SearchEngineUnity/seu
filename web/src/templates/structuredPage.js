@@ -1,13 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import ReCAPTCHA from 'react-google-recaptcha';
 import Layout from '../containers/layout';
 import SEO from '../components/Seo';
 // import Grid from '../components/Grid';
 // import Hero from '../components/Hero';
+import CtaForm from '../components/CtaForm';
 
-import { mapSeoToProps } from '../lib/mapToProps';
+import { mapSeoToProps, mapCtaFormToProps } from '../lib/mapToProps';
 
 // eslint-disable-next-line import/prefer-default-export
 export const query = graphql`
@@ -105,7 +105,7 @@ export const query = graphql`
           idTag
           title
           subtitle
-          from {
+          form {
             submit
             name
             formFields {
@@ -190,46 +190,10 @@ export default ({ data }) => {
               );
 
             case 'ctaForm':
-              return (
-                <div key={segment._key}>
-                  <p>This is the cta form segment</p>
-                  <form
-                    name="contact"
-                    method="POST"
-                    data-netlify="true"
-                    netlify-honeypot="bot-field"
-                    data-netlify-recaptcha="true"
-                  >
-                    <input type="hidden" name="form-name" value="contact" />
-                    <p className="hidden" style={{ display: 'none' }}>
-                      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                      <label>
-                        Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
-                      </label>
-                    </p>
-                    <p>
-                      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                      <label>
-                        Name <input type="text" name="name" />
-                      </label>
-                    </p>
-                    <p>
-                      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                      <label>
-                        Email <input type="email" name="email" />
-                      </label>
-                    </p>
-                    <ReCAPTCHA sitekey="6LdeiLcZAAAAAE8ssfyByzkOZyBdQpzaaOi1qhnl" />
-                    <p>
-                      <button type="submit">Send</button>
-                    </p>
-                  </form>
-                </div>
-                // <Hero id={section._key} {...mapHeroToProps(section)} />
-              );
+              return <CtaForm key={segment._key} {...mapCtaFormToProps(segment)} />;
 
             default:
-              return <div> Still under development</div>;
+              return <div key="default"> Still under development</div>;
           }
         })}
       </main>
