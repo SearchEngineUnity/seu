@@ -7,6 +7,21 @@ export default {
       name: 'label',
       type: 'string',
       title: 'Label',
+      validation: (Rule) => [Rule.required().error('Field is required')],
+    },
+
+    {
+      name: 'name',
+      type: 'string',
+      title: 'Name',
+      description: 'Give one word that describes this field ',
+      validation: (Rule) => [Rule.required().error('Field is required')],
+    },
+    {
+      name: 'rows',
+      title: 'Number of rows of text',
+      type: 'string',
+      validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
       name: 'placeholder',
@@ -15,20 +30,14 @@ export default {
       description: 'This populates the example within the input box',
     },
     {
-      name: 'name',
-      type: 'string',
-      title: 'Name',
-      description: 'Give one word that describes this field ',
-    },
-    {
-      name: 'rows',
-      title: 'Number of rows of text',
-      type: 'string',
-    },
-    {
       name: 'required',
       title: 'Is this information required?',
       type: 'boolean',
     },
   ],
+  preview: {
+    select: {
+      title: 'label',
+    },
+  },
 };

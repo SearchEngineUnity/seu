@@ -15,39 +15,6 @@
 //   };
 // }
 
-// export function mapCallToActionToProps({ title, intro, width, buttons }) {
-//   return {
-//     title,
-//     subtitle: intro,
-//     colWidth: width,
-//     ctaButtons: buttons.map((btn = []) => {
-//       if (btn.internalLink) {
-//         return {
-//           id: btn._key,
-//           title: btn.title,
-//           size: btn.size,
-//           to: `/${btn.internalLink.reference.slug.current}/`,
-//           borderRadius: btn.borderRadius,
-//           internalLink: true,
-//         };
-//       }
-
-//       if (btn.externalLink) {
-//         return {
-//           id: btn._key,
-//           title: btn.title,
-//           size: btn.size,
-//           href: btn.externalLink.href,
-//           borderRadius: btn.borderRadius,
-//           externalLink: true,
-//         };
-//       }
-
-//       return null;
-//     }),
-//   };
-// }
-
 // export function mapContactUsToProps({ email, address, title, width, number }) {
 //   return {
 //     email,
@@ -209,5 +176,14 @@ export function mapGuideHeroToProps({ h1, author, displayDate, heroImage }) {
     author,
     displayDate,
     image: heroImage?.mainImage?.image?.asset?.url,
+  };
+}
+
+export function mapCtaFormToProps({ idTag, title, subtitle, form }) {
+  return {
+    id: idTag,
+    title,
+    subtitle,
+    form,
   };
 }

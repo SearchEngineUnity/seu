@@ -25,8 +25,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
-      subtitle: '_type',
+      title: 'name',
     },
   },
 };

@@ -22,7 +22,7 @@ export default {
       type: 'string',
     },
     {
-      name: 'from',
+      name: 'form',
       title: 'Form builder',
       type: 'form',
       validation: (Rule) => [Rule.required().error('Field is required')],
