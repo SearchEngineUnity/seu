@@ -6,7 +6,7 @@ function CtaForm({ id, title, subtitle, form }) {
   return (
     <Container id={`#${id}`}>
       <h2>{title}</h2>
-      {subtitle ? <p>{subtitle}</p> : null}
+      {subtitle && <p>{subtitle}</p>}
       <Form name={form.name} method="POST" data-netlify="true" netlify-honeypot="bot-field">
         <p className="hidden" style={{ display: 'none' }}>
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
