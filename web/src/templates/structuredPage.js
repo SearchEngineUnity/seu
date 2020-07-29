@@ -183,7 +183,7 @@ export default ({ data }) => {
                 <div key={segment._key}>This is the Grid section</div>
               );
 
-            case 'leftRight':
+            case 'lrTextImage':
               return (
                 <div key={segment._key}>This is the LR segment</div>
                 // <Hero id={section._key} {...mapHeroToProps(section)} />
