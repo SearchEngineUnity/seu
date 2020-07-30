@@ -12,4 +12,17 @@ export default createGlobalStyle`
     font-size: 100%;
     vertical-align: baseline;
   }
+  html {
+    font-size: 14px;
+  }
+@media screen and (min-width: 576px) {
+    html {
+      font-size: 16px;
+    }
+}
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 18px;
+  }
+}
 `;

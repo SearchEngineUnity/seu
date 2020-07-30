@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../containers/layout';
 import SEO from '../components/Seo';
 // import Grid from '../components/Grid';
-// import Hero from '../components/Hero';
+import Hero from '../components/Hero';
 import CtaForm from '../components/CtaForm';
 
 import { mapSeoToProps, mapCtaFormToProps } from '../lib/mapToProps';
@@ -172,8 +172,9 @@ export default ({ data }) => {
           switch (_type) {
             case 'hero':
               return (
-                <div key={segment._key}>This is the Hero segment</div>
+                // <div key={segment._key}>This is the Hero segment</div>
                 // <Hero id={section._key} {...mapHeroToProps(section)} />
+                <Hero />
               );
 
             case 'grid':
