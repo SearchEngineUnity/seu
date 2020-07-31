@@ -6,7 +6,6 @@
 //     columnCount: column,
 //   };
 // }
-
 // export function mapBannerHeaderToProps({ title, image }) {
 //   return {
 //     title,
@@ -14,7 +13,6 @@
 //     imageURL: image.asset.url,
 //   };
 // }
-
 // export function mapContactUsToProps({ email, address, title, width, number }) {
 //   return {
 //     email,
@@ -24,7 +22,6 @@
 //     number,
 //   };
 // }
-
 // export function mapFeatureCollectionToProps({ title, width, features, borderRadius, layout }) {
 //   return {
 //     title,
@@ -40,7 +37,6 @@
 //     })),
 //   };
 // }
-
 // export function mapFormToProps({ action = '', title, width, button, formFields }) {
 //   return {
 //     action,
@@ -60,41 +56,15 @@
 //     })),
 //   };
 // }
-
-// export function mapHeroToProps({ tagLine, title, image, ctaButtons }) {
-//   return {
-//     tagLine,
-//     title,
-//     image: image ? image.image.asset.fluid : '',
-//     imageURL: image ? image.image.asset.url : '',
-//     ctaButtons: ctaButtons.map((btn) => {
-//       if (btn.internalLink) {
-//         return {
-//           id: btn._key,
-//           borderRadius: btn.borderRadius,
-//           to: `/${btn.internalLink.reference.slug.current}/`,
-//           size: btn.size,
-//           title: btn.title,
-//           internalLink: true,
-//         };
-//       }
-
-//       if (btn.externalLink) {
-//         return {
-//           id: btn._key,
-//           borderRadius: btn.borderRadius,
-//           href: btn.externalLink.href || '',
-//           size: btn.size,
-//           title: btn.title,
-//           externalLink: true,
-//         };
-//       }
-
-//       return null;
-//     }),
-//   };
-// }
-
+export function mapHeroToProps({ idTag, title, _rawText, backgroundImage, backgroundColor }) {
+  return {
+    id: idTag,
+    title,
+    heroText: _rawText,
+    imageURL: backgroundImage.asset.url,
+    backgroundColor: backgroundColor.hex,
+  };
+}
 // export function mapPartnerCollectionToProps({ partners, title, width }) {
 //   return {
 //     title,
@@ -109,7 +79,6 @@
 //     })),
 //   };
 // }
-
 // export function mapTestimonialCollectionToProps({ width, title, testimonials = [], layout }) {
 //   return {
 //     title,
@@ -135,7 +104,6 @@
 //     }),
 //   };
 // }
-
 export function mapGuideCardToProps({ h1, slug, excerpt, cardImage, displayDate }) {
   return {
     title: h1,
@@ -147,7 +115,6 @@ export function mapGuideCardToProps({ h1, slug, excerpt, cardImage, displayDate 
     url: `/${slug.current}`,
   };
 }
-
 export function mapSeoToProps(
   { title, description, facebook, twitter, slug, noindex, nofollow, canonical, heroImage },
   siteUrl,
@@ -169,7 +136,6 @@ export function mapSeoToProps(
     heroImage,
   };
 }
-
 export function mapGuideHeroToProps({ h1, author, displayDate, heroImage }) {
   return {
     h1,
@@ -178,7 +144,6 @@ export function mapGuideHeroToProps({ h1, author, displayDate, heroImage }) {
     image: heroImage?.mainImage?.image?.asset?.url,
   };
 }
-
 export function mapCtaFormToProps({ idTag, title, subtitle, form }) {
   return {
     id: idTag,

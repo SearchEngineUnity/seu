@@ -1,14 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-
 import Layout from '../containers/layout';
 import SEO from '../components/Seo';
 // import Grid from '../components/Grid';
 import Hero from '../components/Hero';
 import CtaForm from '../components/CtaForm';
-
-import { mapSeoToProps, mapCtaFormToProps } from '../lib/mapToProps';
-
+import { mapSeoToProps, mapCtaFormToProps, mapHeroToProps } from '../lib/mapToProps';
 // eslint-disable-next-line import/prefer-default-export
 export const query = graphql`
   query PageTemplate($slug: String) {
@@ -49,14 +46,10 @@ export const query = graphql`
           _rawText(resolveReferences: { maxDepth: 20 })
           backgroundImage {
             asset {
-              fluid {
-                src
-              }
+              url
             }
-            _type
           }
           backgroundColor {
-            _type
             hex
           }
         }
@@ -159,10 +152,8 @@ export const query = graphql`
     }
   }
 `;
-
 export default ({ data }) => {
   const type = 'page';
-
   return (
     <Layout>
       <SEO {...mapSeoToProps(data.page, data.site.siteMetadata.siteUrl, type)} />
@@ -174,25 +165,21 @@ export default ({ data }) => {
               return (
                 // <div key={segment._key}>This is the Hero segment</div>
                 // <Hero id={section._key} {...mapHeroToProps(section)} />
-                <Hero />
+                <Hero key={segment._key} {...mapHeroToProps(segment)} />
               );
-
             case 'grid':
               return (
                 // <div>This is the Grid section</div>
                 // <Article id={section._key} {...mapArticleToProps(section)} />
                 <div key={segment._key}>This is the Grid section</div>
               );
-
             case 'lrTextImage':
               return (
                 <div key={segment._key}>This is the LR segment</div>
                 // <Hero id={section._key} {...mapHeroToProps(section)} />
               );
-
             case 'ctaForm':
               return <CtaForm key={segment._key} {...mapCtaFormToProps(segment)} />;
-
             default:
               return <div key="default"> Still under development</div>;
           }
