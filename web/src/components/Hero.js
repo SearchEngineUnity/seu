@@ -1,34 +1,46 @@
 import React from 'react';
-import { Jumbotron } from 'react-bootstrap';
+import { Jumbotron, Container, Row, Col } from 'react-bootstrap';
+import styled from 'styled-components';
+import BlockContent from './block-contents/SimpleSerializer';
 
-function Hero({ heroText, title, imageURL, id }) {
+function Hero({ heroText, title, imageURL, id, backgroundColor }) {
+  console.log(heroText, title, imageURL, id, backgroundColor);
   const style = {
-    background: `url("${imageURL}") no-repeat center center #ffffff`,
-    backgroundSize: 'cover',
+    backgroundColor,
+    color: 'white',
+    padding: '0px',
   };
 
-  const string = 'This is the Hero\nsegment';
+  const Background = styled.section`
+    background-image: url(${imageURL});
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 991px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    margin: auto;
+
+    @media(max-width: 991px) {
+      background-image: none;
+      padding: 12px;
+  `;
 
   return (
-    <div className="col-12" key={id}>
-      <Jumbotron fluid style={style}>
-        {title && (
-          <h1>
-            <pre>{`${string}`}</pre>
-          </h1>
-        )}
-        {heroText && (
-          <p>
-            You see the right business opportunities and go after them. You also recognize the value
-            that good search engine optimization has to drive a recurring stream of leads
-            month-over-month. You just need help developing website pages and learning content that
-            satisfy the true search intent of your audience to uncover the growth you know is
-            possible. That’s where we can help.
-          </p>
-        )}
-      </Jumbotron>
-    </div>
+    <Jumbotron fluid key={id} style={style}>
+      <Background className="backgroundImage">
+        <Container>
+          <Row>
+            <Col className="mx-auto" xl={9} lg={8}>
+              <h1>
+                <pre>{`${title.replace(/\\n/g, '\n')}`}</pre>
+              </h1>
+              {heroText && <BlockContent blocks={heroText} />}
+            </Col>
+          </Row>
+        </Container>
+      </Background>
+    </Jumbotron>
   );
 }
-
 export default Hero;

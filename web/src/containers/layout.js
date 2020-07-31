@@ -106,7 +106,7 @@ const Layout = ({ children }) => {
     <>
       <Helmet>
         <script src="https://kit.fontawesome.com/e4a269ffa7.js" crossOrigin="anonymous" />
-        <link rel="stylesheet" href="../global/cssReset.css" />
+        <link rel="stylesheet" href="https://use.typekit.net/mwy2rpa.css" />
       </Helmet>
       {/* <Header assets={data.asset.nodes[0].imageAsset} />
       <MainNav menu={data.menu.menu}/> */}
