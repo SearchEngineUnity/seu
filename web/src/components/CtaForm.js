@@ -1,54 +1,169 @@
 import React, { useState } from 'react';
-import { Form, Button, Container } from 'react-bootstrap';
+import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const Subtitle = styled.p`
+  font-size: 1.75rem;
+`;
+
+const StyledLabel = styled(Form.Label)`
+  font-weight: bold;
+`;
+// active state doesn't work... still default bootstrap color?
+const StyledButton = styled(Button)`
+  padding: 0.5rem 2rem;
+  background-color: #0a7b86;
+  border: #0a7b86 solid 4px;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: white;
+    color: #0a7b86;
+    font-weight: bold;
+    border: #0a7b86 solid 4px;
+  }
+
+  &:focus {
+    background-color: white;
+    color: #0a7b86;
+    font-weight: bold;
+    border: #0a7b86 solid 4px;
+    box-shadow: none;
+  }
+
+  &:active {
+    background-color: white !important;
+    color: #0a7b86 !important;
+    font-weight: bold !important;
+    border: #0a7b86 solid 4px !important;
+    box-shadow: none !important;
+  }
+`;
 
 function CtaForm({ id, title, subtitle, form }) {
+  const [validated, setValidated] = useState(false);
+
+  const sendForm = (myForm) => {
+    const inputs = myForm.elements;
+    let isValid = true;
+    const formData = new FormData(myForm);
+
+    // eslint-disable-next-line no-plusplus
+    for (let index = 0; index < inputs.length - 1; index++) {
+      const element = inputs[index];
+      if (element.name !== 'bot-field' && element.name !== 'form-name') {
+        if (element.validity.valid === false) {
+          isValid = false;
+        }
+      }
+    }
+
+    if (isValid) {
+      console.log(...formData);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString(),
+      })
+        .then(() => alert('Success!'))
+        .catch((error) => alert(error));
+    }
+  };
+
+  const handleSubmit = (event) => {
+    const myForm = event.currentTarget;
+
+    if (myForm.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+    event.preventDefault();
+    event.stopPropagation();
+    sendForm(myForm);
+  };
+
   return (
     <Container id={`#${id}`}>
-      <h2>{title}</h2>
-      {subtitle && <p>{subtitle}</p>}
-      <Form name={form.name} method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <p className="hidden" style={{ display: 'none' }}>
-          {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-          <label>
-            Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
-          </label>
-        </p>
+      <Row>
+        <Col className="mx-auto" lg={8}>
+          <h2 className="text-center">{title}</h2>
+          {subtitle && <Subtitle className="text-center">{subtitle}</Subtitle>}
+          <Form
+            name={form.name}
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            noValidate
+            validated={validated}
+            onSubmit={handleSubmit}
+            id={form.name}
+          >
+            <p className="hidden" style={{ display: 'none' }}>
+              {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+              <label>
+                Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
+              </label>
+            </p>
 
-        <input type="hidden" name="form-name" value={form.name} />
-        {form.formFields.map((input) => {
-          const { _type } = input;
-          if (_type === 'input') {
-            const { _key, inputType, label, name, placeholder, required } = input;
-            return (
-              <Form.Group controlId={name} key={_key}>
-                <Form.Label>{label}</Form.Label>
-                <Form.Control
-                  type={inputType}
-                  placeholder={placeholder}
-                  required={required}
-                  name={name}
-                />
-              </Form.Group>
-            );
-          }
+            <input type="hidden" name="form-name" value={form.name} />
+            {form.formFields.map((input) => {
+              const { _type, inputType } = input;
 
-          const { _key, label, name, placeholder, required, rows } = input;
-          return (
-            <Form.Group controlId={name} key={_key}>
-              <Form.Label>{label}</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={rows}
-                placeholder={placeholder}
-                required={required}
-                name={name}
-              />
-            </Form.Group>
-          );
-        })}
-        <Button type="submit">{form.submit}</Button>
-      </Form>
+              if (_type === 'input' && inputType === 'email') {
+                const { _key, label, name, placeholder, required } = input;
+                return (
+                  <Form.Group controlId={name} key={_key}>
+                    <StyledLabel>{label}</StyledLabel>
+                    <Form.Control
+                      type={inputType}
+                      placeholder={placeholder}
+                      required={required}
+                      name={name}
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                      ref={React.createRef()}
+                    />
+                  </Form.Group>
+                );
+              }
+
+              if (_type === 'input') {
+                const { _key, label, name, placeholder, required } = input;
+                return (
+                  <Form.Group controlId={name} key={_key}>
+                    <StyledLabel>{label}</StyledLabel>
+                    <Form.Control
+                      type={inputType}
+                      placeholder={placeholder}
+                      required={required}
+                      name={name}
+                      ref={React.createRef()}
+                    />
+                  </Form.Group>
+                );
+              }
+
+              const { _key, label, name, placeholder, required, rows } = input;
+              return (
+                <Form.Group controlId={name} key={_key}>
+                  <StyledLabel>{label}</StyledLabel>
+                  <Form.Control
+                    as="textarea"
+                    rows={rows}
+                    placeholder={placeholder}
+                    required={required}
+                    name={name}
+                    ref={React.createRef()}
+                  />
+                </Form.Group>
+              );
+            })}
+            <StyledButton type="submit">{form.submit}</StyledButton>
+          </Form>
+        </Col>
+      </Row>
     </Container>
   );
 }
