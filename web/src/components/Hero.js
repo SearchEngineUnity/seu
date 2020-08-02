@@ -23,7 +23,9 @@ function Hero({ heroText, title, imageURL, id, backgroundColor }) {
 
     @media(max-width: 991px) {
       background-image: none;
-      padding: 12px;
+      padding-top: 2rem;
+      padding-bottom: 1rem;
+      width: auto;
   `;
 
   return (
@@ -32,9 +34,7 @@ function Hero({ heroText, title, imageURL, id, backgroundColor }) {
         <Container>
           <Row>
             <Col className="mx-auto" xl={9} lg={8}>
-              <h1>
-                <pre>{`${title.replace(/\\n/g, '\n')}`}</pre>
-              </h1>
+              <h1 style={{ whiteSpace: 'pre-wrap' }}>{title.replace(/\\n/g, '\n')}</h1>
               {heroText && <BlockContent blocks={heroText} />}
             </Col>
           </Row>
