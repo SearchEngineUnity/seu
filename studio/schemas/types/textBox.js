@@ -11,7 +11,7 @@ export default {
     {
       name: 'leaderIcon',
       title: 'Leader Icon',
-      type: 'string',
+      type: 'illustration',
     },
     {
       name: 'title',

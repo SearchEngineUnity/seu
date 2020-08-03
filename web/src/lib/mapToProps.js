@@ -152,3 +152,25 @@ export function mapCtaFormToProps({ idTag, title, subtitle, form }) {
     form,
   };
 }
+
+export function mapLrTextImageToProps({ idTag, title, subtitle, order, textDesign, set }) {
+  return {
+    id: idTag,
+    title,
+    subtitle,
+    order,
+    textDesign,
+    set,
+  };
+}
+
+export function mapTextBoxToProps({ leaderIcon, leaderText, title, subtitle, _rawText }) {
+  return {
+    leaderIcon: leaderIcon.image.asset.url,
+    leaderAlt: leaderIcon.alt,
+    leaderText,
+    title,
+    subtitle,
+    _rawText,
+  };
+}
