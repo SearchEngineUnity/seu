@@ -54,7 +54,6 @@ function CtaForm({ id, title, subtitle, form }) {
     for (let index = 0; index < inputs.length - 1; index++) {
       const element = inputs[index];
       if (element.name !== 'bot-field' && element.name !== 'form-name') {
-        console.log(element.validity.valid);
         if (element.validity.valid === false) {
           isValid = false;
         }
@@ -62,7 +61,6 @@ function CtaForm({ id, title, subtitle, form }) {
     }
 
     if (isValid) {
-      console.log(...formData);
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
