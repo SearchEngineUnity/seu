@@ -10,12 +10,13 @@ const Subtitle = styled.p`
 const StyledLabel = styled(Form.Label)`
   font-weight: bold;
 `;
-// active state doesn't work... still default bootstrap color?
+
 const StyledButton = styled(Button)`
   padding: 0.5rem 2rem;
   background-color: #0a7b86;
   border: #0a7b86 solid 4px;
   border-radius: 4px;
+  margin-bottom: 1rem;
 
   &:hover {
     background-color: white;
@@ -25,34 +26,35 @@ const StyledButton = styled(Button)`
   }
 
   &:focus {
-    background-color: white;
-    color: #0a7b86;
-    font-weight: bold;
+    background-color: #0a7b86;
+    color: white;
+    font-weight: normal;
     border: #0a7b86 solid 4px;
     box-shadow: none;
   }
 
   &:active {
-    background-color: white !important;
-    color: #0a7b86 !important;
-    font-weight: bold !important;
+    background-color: #0a7b86 !important;
     border: #0a7b86 solid 4px !important;
+    color: white !important;
     box-shadow: none !important;
   }
 `;
 
 function CtaForm({ id, title, subtitle, form }) {
   const [validated, setValidated] = useState(false);
+  let isValid = true;
+  const [success, setSuccess] = useState(false);
 
   const sendForm = (myForm) => {
     const inputs = myForm.elements;
-    let isValid = true;
     const formData = new FormData(myForm);
 
     // eslint-disable-next-line no-plusplus
     for (let index = 0; index < inputs.length - 1; index++) {
       const element = inputs[index];
       if (element.name !== 'bot-field' && element.name !== 'form-name') {
+        console.log(element.validity.valid);
         if (element.validity.valid === false) {
           isValid = false;
         }
@@ -66,12 +68,17 @@ function CtaForm({ id, title, subtitle, form }) {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData).toString(),
       })
-        .then(() => alert('Success!'))
+        .then(() => {
+          setSuccess(true);
+          myForm.reset();
+          setValidated(false);
+        })
         .catch((error) => alert(error));
     }
   };
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     const myForm = event.currentTarget;
 
     if (myForm.checkValidity() === false) {
@@ -80,8 +87,8 @@ function CtaForm({ id, title, subtitle, form }) {
     }
 
     setValidated(true);
-    event.preventDefault();
-    event.stopPropagation();
+    isValid = true;
+    setSuccess(false);
     sendForm(myForm);
   };
 
@@ -160,6 +167,7 @@ function CtaForm({ id, title, subtitle, form }) {
                 </Form.Group>
               );
             })}
+            {success && <p>Thank you! You will hear from us soon.</p>}
             <StyledButton type="submit">{form.submit}</StyledButton>
           </Form>
         </Col>
