@@ -3,9 +3,15 @@ import { graphql } from 'gatsby';
 import Layout from '../containers/layout';
 import SEO from '../components/Seo';
 // import Grid from '../components/Grid';
+import LrTextImage from '../components/LrTextImage';
 import Hero from '../components/Hero';
 import CtaForm from '../components/CtaForm';
-import { mapSeoToProps, mapCtaFormToProps, mapHeroToProps } from '../lib/mapToProps';
+import {
+  mapSeoToProps,
+  mapCtaFormToProps,
+  mapHeroToProps,
+  mapLrTextImageToProps,
+} from '../lib/mapToProps';
 // eslint-disable-next-line import/prefer-default-export
 export const query = graphql`
   query PageTemplate($slug: String) {
@@ -33,6 +39,8 @@ export const query = graphql`
                   fluid {
                     src
                   }
+                  url
+                  extension
                 }
               }
             }
@@ -57,35 +65,38 @@ export const query = graphql`
           _key
           _type
           idTag
-          leader
           order
           subtitle
           title
           textDesign
           set {
             imageBox {
-              _key
               alt
               image {
                 asset {
                   fluid {
                     src
                   }
+                  url
+                  extension
                 }
               }
             }
             _key
             textBox {
-              text {
-                _key
-                _type
-                style
-                list
-                _rawChildren
-              }
-              _key
               _rawText(resolveReferences: { maxDepth: 20 })
-              leaderIcon
+              leaderIcon {
+                alt
+                image {
+                  asset {
+                    fluid {
+                      src
+                    }
+                    url
+                    extension
+                  }
+                }
+              }
               leaderText
               subtitle
               title
@@ -174,10 +185,7 @@ export default ({ data }) => {
                 <div key={segment._key}>This is the Grid section</div>
               );
             case 'lrTextImage':
-              return (
-                <div key={segment._key}>This is the LR segment</div>
-                // <Hero id={section._key} {...mapHeroToProps(section)} />
-              );
+              return <LrTextImage key={segment._key} {...mapLrTextImageToProps(segment)} />;
             case 'ctaForm':
               return <CtaForm key={segment._key} {...mapCtaFormToProps(segment)} />;
             default:

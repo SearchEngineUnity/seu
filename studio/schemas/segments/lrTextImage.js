@@ -11,11 +11,6 @@ export default {
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
-      name: 'leader',
-      title: 'Leader text',
-      type: 'string',
-    },
-    {
       name: 'title',
       title: 'Title',
       type: 'string',
@@ -44,11 +39,6 @@ export default {
       title: 'Set',
       type: 'array',
       of: [{ type: 'textImageSet' }],
-    },
-    {
-      name: 'footer',
-      title: 'Footer',
-      type: 'simpleBlockContent',
     },
   ],
   preview: {
