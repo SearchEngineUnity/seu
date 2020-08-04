@@ -9,18 +9,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import MainFooter from '../components/MainFooter';
+import { mapMainFooterToProps } from '../lib/mapToProps';
 import GlobalStyle from '../global/GlobalStyle';
 
 const Layout = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
+  const data = useStaticQuery(graphql`
+    query FooterQuery {
+      sanityCompanyInfo {
+        _key
+        address1
+        city
+        email
+        postalCode
+        province
+        name
+      }
+    }
+  `);
 
   // const data = useStaticQuery(graphql`
   // query MyQuery($menu: String) {
@@ -112,11 +118,7 @@ const Layout = ({ children }) => {
 
       <GlobalStyle />
       <>{children}</>
-      {/* <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer> */}
+      <MainFooter {...mapMainFooterToProps(data.sanityCompanyInfo)} />
     </>
   );
 };

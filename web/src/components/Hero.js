@@ -10,23 +10,22 @@ function Hero({ heroText, title, imageURL, id, backgroundColor }) {
     color: 'white',
     padding: '0px',
   };
-
   const Background = styled.section`
-    background-image: url(${imageURL});
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 991px;
-    padding-top: 120px;
-    padding-bottom: 120px;
-    margin: auto;
+  background-image: url(${imageURL});
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 991px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  margin: auto;
 
-    @media(max-width: 991px) {
-      background-image: none;
-      padding-top: 2rem;
-      padding-bottom: 1rem;
-      width: auto;
-  `;
+  @media(max-width: 991px) {
+    background-image: none;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    width: auto;
+`;
 
   return (
     <Jumbotron fluid key={id} style={style}>
