@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../containers/layout';
 import SEO from '../components/Seo';
-// import Grid from '../components/Grid';
+import Grid from '../components/Grid';
 import LrTextImage from '../components/LrTextImage';
 import Hero from '../components/Hero';
 import CtaForm from '../components/CtaForm';
@@ -11,6 +11,7 @@ import {
   mapCtaFormToProps,
   mapHeroToProps,
   mapLrTextImageToProps,
+  mapGridToProps,
 } from '../lib/mapToProps';
 // eslint-disable-next-line import/prefer-default-export
 export const query = graphql`
@@ -41,6 +42,7 @@ export const query = graphql`
                   }
                   url
                   extension
+                  originalFilename
                 }
               }
             }
@@ -182,7 +184,7 @@ export default ({ data }) => {
               return (
                 // <div>This is the Grid section</div>
                 // <Article id={section._key} {...mapArticleToProps(section)} />
-                <div key={segment._key}>This is the Grid section</div>
+                <Grid key={segment._key} {...mapGridToProps(segment)} />
               );
             case 'lrTextImage':
               return <LrTextImage key={segment._key} {...mapLrTextImageToProps(segment)} />;

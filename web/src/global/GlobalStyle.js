@@ -47,4 +47,24 @@ export default createGlobalStyle`
     font-weight: 700;
     font-style: normal;
   }
+
+  a {
+    color: #2C2142;
+    font-weight: 700;
+  }
+  
+  a:hover {
+    color: #2C2142;
+    font-weight: 700;
+  }
+  
+  a:active {
+    color: #2C2142;
+    font-weight: 700;
+  }
+  
+  a:visited {
+    color: #2C2142;
+    font-weight: 700;
+  }
 `;
