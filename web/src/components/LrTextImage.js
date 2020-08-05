@@ -23,7 +23,7 @@ const PaddedCol = styled(Col)`
 function LrTextImage({ id, title, subtitle, order, textDesign, set }) {
   console.log(order, textDesign, set);
   return (
-    <Container id={`#${id}`} as="section" style={{ marginBottom: '2rem' }}>
+    <Container id={`#${id}`} as="section">
       {title && <h2 className="text-center">{title}</h2>}
       {subtitle && <Subtitle className="text-center">{subtitle}</Subtitle>}
 
