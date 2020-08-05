@@ -104,6 +104,25 @@ export function mapHeroToProps({ idTag, title, _rawText, backgroundImage, backgr
 //     }),
 //   };
 // }
+export function mapGridToProps({ idTag, title, subtitle, leader, col, design, cards }) {
+  return {
+    leader,
+    title,
+    subtitle,
+    col,
+    design,
+    cards,
+    id: idTag,
+  };
+}
+export function mapTileToProps({ title, cardImage }) {
+  return {
+    title,
+    image: cardImage?.image?.asset?.url,
+    imageAlt: cardImage?.alt,
+    imageFilename: cardImage?.image?.asset?.originalFilename,
+  };
+}
 export function mapGuideCardToProps({ h1, slug, excerpt, cardImage, displayDate }) {
   return {
     title: h1,
@@ -179,5 +198,16 @@ export function mapImageBoxToProps({ alt, image }) {
   return {
     image: image?.asset?.url,
     alt,
+  };
+}
+
+export function mapMainFooterToProps({ address1, city, email, postalCode, province, name }) {
+  return {
+    address: address1,
+    city,
+    email,
+    postalCode,
+    province,
+    name,
   };
 }
