@@ -7,6 +7,16 @@ const RedI = styled.i`
   color: #f13718;
 `;
 
+const NoIndentUl = styled.ul`
+  list-style-type: none;
+  margin-left: 1.4rem;
+  padding-left: 0;
+
+  & > li {
+    position: relative;
+  }
+`;
+
 const serializers = {
   types: {
     block({ children }) {
@@ -38,7 +48,7 @@ const serializers = {
     console.log(children);
     switch (children[0].props.node.listItem) {
       case 'bullet':
-        return <ul className="fa-ul">{children}</ul>;
+        return <NoIndentUl>{children}</NoIndentUl>;
       default:
         return <ol>{children}</ol>;
     }
