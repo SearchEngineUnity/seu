@@ -115,9 +115,10 @@ export function mapGridToProps({ idTag, title, subtitle, leader, col, design, ca
     id: idTag,
   };
 }
-export function mapTileToProps({ title, cardImage }) {
+export function mapTileToProps({ title, cardImage, _key }) {
   return {
     title,
+    id: _key,
     image: cardImage?.image?.asset?.url,
     imageAlt: cardImage?.alt,
     imageFilename: cardImage?.image?.asset?.originalFilename,

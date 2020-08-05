@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import styled from 'styled-components';
+// this media query will only work with 3 across and NO OTHER!
 
 const PaddedDiv = styled.div`
   margin-bottom: 30px;
@@ -29,10 +30,14 @@ function Tile1({ id, title, image, imageAlt, col }) {
   console.log(id, title, image, imageAlt, col);
   return (
     <PaddedDiv className={`align-items-stretch ${col}`}>
-      <Card key={id} className="bordercard h-100">
-        {image && <Card.Img alt={imageAlt} className="w-100 h-auto" variant="top" src={image} />}
-        <Card.Body>
-          {title && <Card.Title className="font-weight-bold text-center">{title}</Card.Title>}
+      <Card className="borderdesign h-100 p-0">
+        {image && (
+          <Card.Img alt={imageAlt} className="w-50 h-auto mx-auto" variant="top" src={image} />
+        )}
+        <Card.Body className="p-0">
+          {title && (
+            <Card.Title className="font-weight-bold text-center px-2 pb-3">{title}</Card.Title>
+          )}
         </Card.Body>
       </Card>
     </PaddedDiv>

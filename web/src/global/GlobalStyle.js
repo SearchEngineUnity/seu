@@ -82,4 +82,8 @@ export default createGlobalStyle`
   .subtitle {
     font-size: 1.5rem;
   }
+
+  .borderdesign {
+    border:2px solid #f2f2f2f2;
+  }
 `;
