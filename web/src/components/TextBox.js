@@ -7,11 +7,6 @@ const Subtitle = styled.p`
   font-weight: bold;
 `;
 
-const Leader = styled.p`
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-`;
-
 const Icon = styled.img`
   height: 2.5rem;
   width: 2.5rem;
@@ -21,10 +16,10 @@ function TextBox({ leaderIcon, leaderAlt, leaderText, title, subtitle, text }) {
   return (
     <>
       {leaderText && (
-        <Leader>
+        <p className="leader">
           {leaderIcon && <Icon src={leaderIcon} alt={leaderAlt} />}
           <span> {leaderText}</span>
-        </Leader>
+        </p>
       )}
       {title && <h2>{title}</h2>}
       {subtitle && <Subtitle>{subtitle}</Subtitle>}
