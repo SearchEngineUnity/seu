@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const ImgContain = styled.img`
-  max-width: 100%;
-  object-fit: contain;
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 `;
 
 function ImageBox({ image, alt }) {
