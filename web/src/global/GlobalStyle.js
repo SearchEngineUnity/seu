@@ -67,4 +67,15 @@ export default createGlobalStyle`
     color: #2C2142;
     font-weight: 700;
   }
+
+  section {
+    margin-bottom: 3rem;
+  }
+  
+  .leader {
+    font-size: 1.75rem;
+  }
+  .subtitle {
+    font-size: 1.5rem;
+  }
 `;
