@@ -9,6 +9,7 @@ function Hero({ heroText, title, imageURL, id, backgroundColor }) {
     backgroundColor,
     color: 'white',
     padding: '0px',
+    marginBottom: '3rem',
   };
 
   const Background = styled.div`
