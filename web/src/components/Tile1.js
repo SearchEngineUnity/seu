@@ -1,14 +1,15 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-// import styled from 'styled-components';
 
-function Tile1({ id, title, image, imageAlt, col, imageFilename }) {
+function Tile1({ id, title, image, imageAlt, col }) {
   console.log(id, title, image, imageAlt, col);
   return (
-    <div className={col}>
-      <Card key={id}>
-        {image && <Card.Img alt={imageAlt} variant="top" src={image} dl={imageFilename} />}
-        <Card.Body>{title && <Card.Title>{title}</Card.Title>}</Card.Body>
+    <div className={`align-items-stretch mb-4 ${col}`}>
+      <Card key={id} className="bordercard h-100">
+        {image && <Card.Img alt={imageAlt} className="w-100 h-auto" variant="top" src={image} />}
+        <Card.Body>
+          {title && <Card.Title className="font-weight-bold text-center">{title}</Card.Title>}
+        </Card.Body>
       </Card>
     </div>
   );

@@ -1,15 +1,27 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, CardDeck } from 'react-bootstrap';
 // import styled from 'styled-components';
 
 function Tile2({ id, title, image, imageAlt, col, imageFilename }) {
   console.log(id, title, image, imageAlt, col);
   return (
     <div className={col}>
-      <Card key={id}>
-        {image && <Card.Img alt={imageAlt} variant="top" src={image} dl={imageFilename} />}
-        <Card.Body>{title && <Card.Title>{title}</Card.Title>}</Card.Body>
-      </Card>
+      <CardDeck className="">
+        <Card key={id} className="border-0">
+          {image && (
+            <Card.Img
+              alt={imageAlt}
+              className="rounded-circle w-50 mx-auto"
+              variant="top"
+              src={image}
+              dl={imageFilename}
+            />
+          )}
+          <Card.Body>
+            {title && <Card.Title className="font-weight-bold text-center">{title}</Card.Title>}
+          </Card.Body>
+        </Card>
+      </CardDeck>
     </div>
   );
 }
