@@ -1,46 +1,36 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import BlockContent from './block-contents/SeuLPSerializer';
 
 const Subtitle = styled.p`
-  font-size: 1.75rem;
+  font-weight: bold;
+`;
+
+const Leader = styled.p`
+  font-size: 1.5rem;
+`;
+
+const Icon = styled.img`
+  height: 2.5rem;
+  width: 2.5rem;
 `;
 
 function TextBox({ leaderIcon, leaderAlt, leaderText, title, subtitle, text }) {
   return (
-    <div>This is TextBox</div>
-    // <Container id={`#${id}`}>
-    //   {title && <h2 className="text-center">{title}</h2>}
-    //   {subtitle && <Subtitle className="text-center">{subtitle}</Subtitle>}
-    //   <Row className="mx-auto">
-    //     {set.map((el) => {
-    //       console.log(el)
-    //       if (order) {
-    //         return (
-    //           <>
-    //             <Col lg="6" xs="12">
-    //               this is image
-    //             </Col>
-    //             <Col lg="6" xs="12">
-    //               this is text
-    //             </Col>
-    //           </>
-    //         );
-    //       }
-    //       return (
-    //         <>
-    //           <Col lg="6" xs="12">
-    //             {/* <TextBox info={el.textBox} /> */}
-    //           </Col>
-    //           <Col lg="6" xs="12">
-    //             this is image
-    //           </Col>
-    //         </>
-    //       );
-    //     })}
-    //   </Row>
-    // </Container>
+    <>
+      {leaderText && (
+        <Leader>
+          {leaderIcon && (
+            <Icon src={leaderIcon} alt={leaderAlt} style={{ height: '2.5rem', width: '2.5rem' }} />
+          )}
+          <span> {leaderText}</span>
+        </Leader>
+      )}
+      {title && <h2>{title}</h2>}
+      {subtitle && <Subtitle>{subtitle}</Subtitle>}
+      {text && <BlockContent blocks={text} />}
+    </>
   );
 }
 
@@ -51,7 +41,7 @@ TextBox.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
-  text: PropTypes.object,
+  text: PropTypes.array,
 };
 
 TextBox.defaultProps = {

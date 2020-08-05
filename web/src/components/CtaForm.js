@@ -91,7 +91,7 @@ function CtaForm({ id, title, subtitle, form }) {
   };
 
   return (
-    <Container id={`#${id}`}>
+    <Container id={`#${id}`} as="section">
       <Row>
         <Col className="mx-auto" lg={8}>
           <h2 className="text-center">{title}</h2>
