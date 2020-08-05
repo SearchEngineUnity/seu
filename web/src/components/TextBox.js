@@ -21,9 +21,7 @@ function TextBox({ leaderIcon, leaderAlt, leaderText, title, subtitle, text }) {
     <>
       {leaderText && (
         <Leader>
-          {leaderIcon && (
-            <Icon src={leaderIcon} alt={leaderAlt} style={{ height: '2.5rem', width: '2.5rem' }} />
-          )}
+          {leaderIcon && <Icon src={leaderIcon} alt={leaderAlt} />}
           <span> {leaderText}</span>
         </Leader>
       )}
