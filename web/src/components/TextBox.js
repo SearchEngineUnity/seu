@@ -9,6 +9,7 @@ const Subtitle = styled.p`
 
 const Leader = styled.p`
   font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 `;
 
 const Icon = styled.img`
