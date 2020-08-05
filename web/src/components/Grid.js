@@ -6,7 +6,7 @@ import Tile3 from './Tile3';
 import { mapTileToProps } from '../lib/mapToProps';
 // import styled from 'styled-components';
 
-function Grid({ leader, title, subtitle, col, design, cards, id }) {
+function Grid({ leader, title, subtitle, col, design, cards }) {
   console.log(col, cards);
   const componentTypeSwitch = (tileDesign, tileCol, tile) => {
     switch (tileDesign) {
@@ -26,9 +26,9 @@ function Grid({ leader, title, subtitle, col, design, cards, id }) {
 
   return (
     <Container as="section">
-      <p>{leader}</p>
-      <h2>{title}</h2>
-      <p>{subtitle}</p>
+      <p className="text-center leader">{leader}</p>
+      <h2 className="text-center">{title}</h2>
+      <p className="text-center subtitle">{subtitle}</p>
       <Row>{cards.map((card) => componentTypeSwitch(design, col, card))}</Row>
     </Container>
   );

@@ -71,4 +71,11 @@ export default createGlobalStyle`
   section {
     margin-bottom: 3rem;
   }
+  
+  .leader {
+    font-size: 1.75rem;
+  }
+  .subtitle {
+    font-size: 1.5rem;
+  }
 `;
