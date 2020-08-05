@@ -4,20 +4,19 @@ import Tile1 from './Tile1';
 import Tile2 from './Tile2';
 import Tile3 from './Tile3';
 import { mapTileToProps } from '../lib/mapToProps';
-// import styled from 'styled-components';
 
 function Grid({ leader, title, subtitle, col, design, cards }) {
   console.log(col, cards);
-  const componentTypeSwitch = (tileDesign, tileCol, tile) => {
+  const componentTypeSwitch = (tileDesign, tileCol, tile, id) => {
     switch (tileDesign) {
       case '1':
-        return <Tile1 col={tileCol} {...mapTileToProps(tile)} />;
+        return <Tile1 key={id} col={tileCol} {...mapTileToProps(tile)} />;
 
       case '2':
-        return <Tile2 col={tileCol} {...mapTileToProps(tile)} />;
+        return <Tile2 key={id} col={tileCol} {...mapTileToProps(tile)} />;
 
       case '3':
-        return <Tile3 col={tileCol} {...mapTileToProps(tile)} />;
+        return <Tile3 key={id} col={tileCol} {...mapTileToProps(tile)} />;
 
       default:
         return <div>Tile Design undefined</div>;

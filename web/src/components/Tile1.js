@@ -30,7 +30,7 @@ function Tile1({ id, title, image, imageAlt, col }) {
   console.log(id, title, image, imageAlt, col);
   return (
     <PaddedDiv className={`align-items-stretch ${col}`}>
-      <Card key={id} className="borderdesign h-100 p-0">
+      <Card className="borderdesign h-100 p-0">
         {image && (
           <Card.Img alt={imageAlt} className="w-50 h-auto mx-auto" variant="top" src={image} />
         )}

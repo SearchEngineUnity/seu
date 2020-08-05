@@ -29,7 +29,7 @@ function Tile3({ id, title, image, imageAlt, col, imageFilename }) {
   console.log(id, title, image, imageAlt, col);
   return (
     <PaddedDiv className={col}>
-      <Card key={id} className="border-0">
+      <Card className="border-0">
         {image && <Card.Img alt={imageAlt} variant="top" src={image} dl={imageFilename} />}
         {/* <Card.Body>{title && <Card.Title>{title}</Card.Title>}</Card.Body> */}
       </Card>

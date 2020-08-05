@@ -181,11 +181,7 @@ export default ({ data }) => {
                 <Hero key={segment._key} {...mapHeroToProps(segment)} />
               );
             case 'grid':
-              return (
-                // <div>This is the Grid section</div>
-                // <Article id={section._key} {...mapArticleToProps(section)} />
-                <Grid key={segment._key} {...mapGridToProps(segment)} />
-              );
+              return <Grid key={segment._key} {...mapGridToProps(segment)} />;
             case 'lrTextImage':
               return <LrTextImage key={segment._key} {...mapLrTextImageToProps(segment)} />;
             case 'ctaForm':
