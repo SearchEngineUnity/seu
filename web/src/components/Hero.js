@@ -25,7 +25,7 @@ const StyledJumbo = styled(Jumbotron)`
   background-color: ${(props) => props.color};
   color: white;
   padding: 0px;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 `;
 
 const PreH1 = styled.h1`

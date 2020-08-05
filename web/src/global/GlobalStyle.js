@@ -48,6 +48,10 @@ export default createGlobalStyle`
     font-style: normal;
   }
 
+  h2 {
+    margin-bottom: 1rem;
+  }
+
   a {
     color: #2C2142;
     font-weight: 700;
@@ -69,7 +73,7 @@ export default createGlobalStyle`
   }
 
   section {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
   
   .leader {
