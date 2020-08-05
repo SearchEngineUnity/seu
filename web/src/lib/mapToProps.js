@@ -61,8 +61,8 @@ export function mapHeroToProps({ idTag, title, _rawText, backgroundImage, backgr
     id: idTag,
     title,
     heroText: _rawText,
-    imageURL: backgroundImage.asset.url,
-    backgroundColor: backgroundColor.hex,
+    imageURL: backgroundImage?.asset?.url,
+    backgroundColor: backgroundColor?.hex,
   };
 }
 // export function mapPartnerCollectionToProps({ partners, title, width }) {
@@ -177,7 +177,7 @@ export function mapLrTextImageToProps({ idTag, title, subtitle, order, textDesig
     id: idTag,
     title,
     subtitle,
-    order,
+    order: !!order,
     textDesign,
     set,
   };
@@ -185,12 +185,19 @@ export function mapLrTextImageToProps({ idTag, title, subtitle, order, textDesig
 
 export function mapTextBoxToProps({ leaderIcon, leaderText, title, subtitle, _rawText }) {
   return {
-    leaderIcon: leaderIcon.image.asset.url,
-    leaderAlt: leaderIcon.alt,
+    leaderIcon: leaderIcon?.image?.asset?.url,
+    leaderAlt: leaderIcon?.alt,
     leaderText,
     title,
     subtitle,
-    _rawText,
+    text: _rawText,
+  };
+}
+
+export function mapImageBoxToProps({ alt, image }) {
+  return {
+    image: image?.asset?.url,
+    alt,
   };
 }
 
