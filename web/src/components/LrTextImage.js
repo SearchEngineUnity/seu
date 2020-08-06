@@ -11,7 +11,7 @@ const Subtitle = styled.p`
 `;
 
 const PaddedRow = styled(Row)`
-  margin: 0 auto 2rem auto;
+  margin: 0 -15px 2rem -15px;
 `;
 
 const PaddedCol = styled(Col)`
@@ -30,25 +30,21 @@ function LrTextImage({ id, title, subtitle, order, textDesign, set }) {
         if ((!order && (index === 0 || index % 2 === 0)) || (order && index % 2 !== 0)) {
           return (
             <PaddedRow key={el._key}>
-              <PaddedCol lg="6" xs="12" className="px-0">
+              <PaddedCol lg="6" xs="12">
                 <TextBox {...mapTextBoxToProps(el.textBox)} />
               </PaddedCol>
-              <Col lg="6" xs="12" className="px-0">
+              <Col lg="6" xs="12">
                 <ImageBox {...mapImageBoxToProps(el.imageBox)} />
               </Col>
             </PaddedRow>
           );
         }
         return (
-          <PaddedRow className="mx-auto" key={el._key}>
-            <Col lg={{ order: 'first', span: 6 }} xs={{ order: 'last', span: 12 }} className="px-0">
+          <PaddedRow key={el._key}>
+            <Col lg={{ order: 'first', span: 6 }} xs={{ order: 'last', span: 12 }}>
               <ImageBox {...mapImageBoxToProps(el.imageBox)} />
             </Col>
-            <PaddedCol
-              lg={{ order: 'last', span: 6 }}
-              xs={{ order: 'first', span: 12 }}
-              className="px-0"
-            >
+            <PaddedCol lg={{ order: 'last', span: 6 }} xs={{ order: 'first', span: 12 }}>
               <TextBox {...mapTextBoxToProps(el.textBox)} />
             </PaddedCol>
           </PaddedRow>
