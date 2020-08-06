@@ -90,7 +90,8 @@ export default createGlobalStyle`
   }
 
   hr {
-    background-color: #D4D2D9;
+    border-bottom: 1px solid #F2F2F2;
+    background-color: #F2F2F2;
     margin: 0;
   }
 
