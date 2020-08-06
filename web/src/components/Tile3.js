@@ -3,7 +3,6 @@ import { Card } from 'react-bootstrap';
 // import styled from 'styled-components';
 
 function Tile3({ id, title, image, imageAlt, col, imageFilename }) {
-  console.log(id, title, image, imageAlt, col);
   return (
     <div className={col}>
       <Card key={id} className="border-0">

@@ -3,7 +3,6 @@ import { Card, CardDeck } from 'react-bootstrap';
 // import styled from 'styled-components';
 
 function Tile2({ id, title, image, imageAlt, col, imageFilename }) {
-  console.log(id, title, image, imageAlt, col);
   return (
     <div className={col}>
       <CardDeck className="">

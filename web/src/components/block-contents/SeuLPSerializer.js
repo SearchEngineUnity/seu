@@ -45,7 +45,6 @@ const serializers = {
     },
   },
   list: ({ children }) => {
-    console.log(children);
     switch (children[0].props.node.listItem) {
       case 'bullet':
         return <NoIndentUl>{children}</NoIndentUl>;

@@ -21,21 +21,19 @@ const PaddedCol = styled(Col)`
 `;
 
 function LrTextImage({ id, title, subtitle, order, textDesign, set }) {
-  console.log(order, textDesign, set);
   return (
-    <Container id={`#${id}`} as="section">
+    <Container id={id} as="section">
       {title && <h2 className="text-center">{title}</h2>}
       {subtitle && <Subtitle className="text-center">{subtitle}</Subtitle>}
 
       {set.map((el, index) => {
-        console.log(order);
         if ((!order && (index === 0 || index % 2 === 0)) || (order && index % 2 !== 0)) {
           return (
             <PaddedRow key={el._key}>
-              <PaddedCol lg="6" xs="12">
+              <PaddedCol lg="6" xs="12" className="px-0">
                 <TextBox {...mapTextBoxToProps(el.textBox)} />
               </PaddedCol>
-              <Col lg="6" xs="12">
+              <Col lg="6" xs="12" className="px-0">
                 <ImageBox {...mapImageBoxToProps(el.imageBox)} />
               </Col>
             </PaddedRow>
@@ -43,10 +41,14 @@ function LrTextImage({ id, title, subtitle, order, textDesign, set }) {
         }
         return (
           <PaddedRow className="mx-auto" key={el._key}>
-            <Col lg={{ order: 'first', span: 6 }} xs={{ order: 'last', span: 12 }}>
+            <Col lg={{ order: 'first', span: 6 }} xs={{ order: 'last', span: 12 }} className="px-0">
               <ImageBox {...mapImageBoxToProps(el.imageBox)} />
             </Col>
-            <PaddedCol lg={{ order: 'last', span: 6 }} xs={{ order: 'first', span: 12 }}>
+            <PaddedCol
+              lg={{ order: 'last', span: 6 }}
+              xs={{ order: 'first', span: 12 }}
+              className="px-0"
+            >
               <TextBox {...mapTextBoxToProps(el.textBox)} />
             </PaddedCol>
           </PaddedRow>

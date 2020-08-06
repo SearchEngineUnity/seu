@@ -211,3 +211,11 @@ export function mapMainFooterToProps({ address1, city, email, postalCode, provin
     name,
   };
 }
+
+export function mapMainNavToProps({ title, logo, menu }) {
+  return {
+    name: title,
+    logo: logo?.asset?.url,
+    menu,
+  };
+}

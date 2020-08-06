@@ -18,24 +18,19 @@ const StyledButton = styled(Button)`
   border-radius: 4px;
   margin-bottom: 1rem;
 
-  &:hover {
-    background-color: white;
-    color: #0a7b86;
-    font-weight: bold;
-    border: #0a7b86 solid 4px;
-  }
-
+  &:hover,
   &:focus {
-    background-color: #0a7b86;
+    background-color: #086068;
     color: white;
     font-weight: normal;
-    border: #0a7b86 solid 4px;
+    border: #086068 solid 4px;
     box-shadow: none;
   }
 
+  &.active,
   &:active {
-    background-color: #0a7b86 !important;
-    border: #0a7b86 solid 4px !important;
+    background-color: #086068 !important;
+    border: #086068 solid 4px !important;
     color: white !important;
     box-shadow: none !important;
   }
@@ -91,7 +86,7 @@ function CtaForm({ id, title, subtitle, form }) {
   };
 
   return (
-    <Container id={`#${id}`} as="section">
+    <Container id={`${id}`} as="section">
       <Row>
         <Col className="mx-auto" lg={8}>
           <h2 className="text-center">{title}</h2>

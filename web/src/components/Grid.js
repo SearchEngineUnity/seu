@@ -7,7 +7,6 @@ import { mapTileToProps } from '../lib/mapToProps';
 // import styled from 'styled-components';
 
 function Grid({ leader, title, subtitle, col, design, cards }) {
-  console.log(col, cards);
   const componentTypeSwitch = (tileDesign, tileCol, tile) => {
     switch (tileDesign) {
       case '1':

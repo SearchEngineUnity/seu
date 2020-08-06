@@ -1,8 +1,6 @@
 import { MdWeb } from 'react-icons/md';
 import * as segments from '../segments';
 
-console.log(segments);
-
 export default {
   name: 'page',
   type: 'document',
