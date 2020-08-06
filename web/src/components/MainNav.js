@@ -89,6 +89,7 @@ function NavTypeA({ name, logo, menu }) {
           <Navbar.Brand className="my-3">
             <BrandImg alt={name} src={logo} className="d-inline-block" />
           </Navbar.Brand>
+          {/* still need to figure out toggle icon swap */}
           <CustomBurger aria-controls="basic-navbar-nav">
             <i className="fas fa-bars fa-2x" />
           </CustomBurger>
