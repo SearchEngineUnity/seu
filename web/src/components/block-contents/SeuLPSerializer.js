@@ -11,10 +11,15 @@ const NoIndentUl = styled.ul`
   list-style-type: none;
   margin-left: 1.4rem;
   padding-left: 0;
+  margin-bottom: 0;
 
   & > li {
     position: relative;
   }
+`;
+
+const PaddedLi = styled.li`
+  margin-bottom: 1rem;
 `;
 
 const serializers = {
@@ -54,12 +59,12 @@ const serializers = {
   },
   listItem: ({ children }) => {
     return (
-      <li>
+      <PaddedLi>
         <span className="fa-li">
           <RedI className="fas fa-plus fa-xs" />
         </span>
         {children}
-      </li>
+      </PaddedLi>
     );
   },
 };

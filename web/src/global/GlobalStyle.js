@@ -6,6 +6,7 @@ export default createGlobalStyle`
     font-family: rubrik-edge-new,sans-serif;
     font-weight: 400;
     font-style: normal;
+    color: #2c2142;
   }
 
   pre {

@@ -59,6 +59,9 @@ const StyledButton = styled(Button)`
 const CustomBurger = styled(Navbar.Toggle)`
   border: none;
   outline: none;
+  color: #2c2142 !important;
+  padding: 0;
+  font-size: 1rem;
 
   &:focus {
     outline: none;
@@ -74,11 +77,11 @@ function NavTypeA({ name, logo, menu }) {
     <GreyContainer fluid className="px-0">
       <Container className="align-self-center px-0">
         <CustomNavbar collapseOnSelect expand="lg" className="text-center">
-          <Navbar.Brand href="/" className="my-3">
+          <Navbar.Brand className="my-3">
             <BrandImg alt={name} src={logo} className="d-inline-block" />
           </Navbar.Brand>
-          <CustomBurger aria-controls="basic-navbar-nav" style={{ color: '#2C2142' }}>
-            <i className="fas fa-bars" />
+          <CustomBurger aria-controls="basic-navbar-nav">
+            <i className="fas fa-bars fa-2x" />
           </CustomBurger>
           <Navbar.Collapse id="basic-navbar-nav">
             {menu.map((item) => (
