@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Navbar, Nav, Button } from 'react-bootstrap';
 import styled from 'styled-components';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const GreyContainer = styled(Container)`
   background-color: #f2f2f2;
@@ -98,9 +99,17 @@ function NavTypeA({ name, logo, menu }) {
               <>
                 {index === 0 ? null : <hr />}
                 <CustomNav className="py-3">
-                  <Nav.Link key={item._key} href={`#${item.link}`}>
+                  {/* <Nav.Link key={item._key} href={`/#${item.link}`}>
                     {item.isButton ? <StyledButton>{item.title}</StyledButton> : item.title}
-                  </Nav.Link>
+                  </Nav.Link> */}
+                  <AnchorLink
+                    to={`/#${item.link}`}
+                    title={item.title}
+                    className="stripped"
+                    stripHash
+                  >
+                    {item.isButton ? <StyledButton>{item.title}</StyledButton> : item.title}
+                  </AnchorLink>
                 </CustomNav>
               </>
             ))}
