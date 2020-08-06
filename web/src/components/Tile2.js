@@ -1,12 +1,35 @@
 import React from 'react';
 import { Card, CardDeck } from 'react-bootstrap';
-// import styled from 'styled-components';
+import styled from 'styled-components';
+
+const PaddedDiv = styled.div`
+  margin-bottom: 30px;
+
+  @media screen and (max-width: 575px) {
+    margin-bottom: 15px;
+  }
+
+  &:nth-last-child(1) {
+    margin-bottom: 1rem;
+  }
+
+  &:nth-last-child(2) {
+    @media screen and (min-width: 576px) {
+      margin-bottom: 1rem;
+    }
+  }
+  &:nth-last-child(3) {
+    @media screen and (min-width: 992px) {
+      margin-bottom: 1rem;
+    }
+  }
+`;
 
 function Tile2({ id, title, image, imageAlt, col, imageFilename }) {
   return (
-    <div className={col}>
+    <PaddedDiv className={col}>
       <CardDeck className="">
-        <Card key={id} className="border-0">
+        <Card className="border-0">
           {image && (
             <Card.Img
               alt={imageAlt}
@@ -21,7 +44,7 @@ function Tile2({ id, title, image, imageAlt, col, imageFilename }) {
           </Card.Body>
         </Card>
       </CardDeck>
-    </div>
+    </PaddedDiv>
   );
 }
 export default Tile2;

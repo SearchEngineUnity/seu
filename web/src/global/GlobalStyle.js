@@ -77,8 +77,8 @@ export default createGlobalStyle`
   }
 
   section:nth-child(n+2) {
-    padding-top: 100px;
-    margin-top: -100px;
+    padding-top: 6.5rem;
+    margin-top: -6.5rem;
   }
   
   .leader {
@@ -114,5 +114,9 @@ export default createGlobalStyle`
 
   button:focus, a:focus {
     outline-color: #086068;
+  }
+
+  .borderdesign {
+    border:2px solid #f2f2f2f2;
   }
 `;
