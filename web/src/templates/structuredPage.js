@@ -175,11 +175,7 @@ export default ({ data }) => {
           const { _type } = segment;
           switch (_type) {
             case 'hero':
-              return (
-                // <div key={segment._key}>This is the Hero segment</div>
-                // <Hero id={section._key} {...mapHeroToProps(section)} />
-                <Hero key={segment._key} {...mapHeroToProps(segment)} />
-              );
+              return <Hero key={segment._key} {...mapHeroToProps(segment)} />;
             case 'grid':
               return <Grid key={segment._key} {...mapGridToProps(segment)} />;
             case 'lrTextImage':

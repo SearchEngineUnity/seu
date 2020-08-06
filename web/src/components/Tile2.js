@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardDeck } from 'react-bootstrap';
 import styled from 'styled-components';
+// this media query will only work with 3 across and NO OTHER!
 
 const PaddedDiv = styled.div`
   margin-bottom: 30px;
@@ -25,7 +26,8 @@ const PaddedDiv = styled.div`
   }
 `;
 
-function Tile2({ id, title, image, imageAlt, col, imageFilename }) {
+function Tile2({ id, title, image, imageAlt, col }) {
+  console.log(id, title, image, imageAlt, col);
   return (
     <PaddedDiv className={col}>
       <CardDeck className="">
@@ -36,7 +38,6 @@ function Tile2({ id, title, image, imageAlt, col, imageFilename }) {
               className="rounded-circle w-50 mx-auto"
               variant="top"
               src={image}
-              dl={imageFilename}
             />
           )}
           <Card.Body>
