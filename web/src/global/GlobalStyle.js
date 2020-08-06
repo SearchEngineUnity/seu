@@ -75,12 +75,45 @@ export default createGlobalStyle`
   section {
     margin-bottom: 3rem;
   }
+
+  section:nth-child(n+2) {
+    padding-top: 6.5rem;
+    margin-top: -6.5rem;
+  }
   
   .leader {
     font-size: 1.75rem;
   }
   .subtitle {
     font-size: 1.5rem;
+  }
+
+  hr {
+    background-color: #D4D2D9;
+    margin: 0;
+  }
+
+  input, textara {
+    border-color: #D4D2D9;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: #2C2142;
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #2C2142;
+    @media screen and (min-width: 992px) {
+      text-decoration: underline;
+    }
+  }
+
+  .navbar-light .navbar-nav .nav-link.active {
+    color: #2C2142;
+  }
+
+  button:focus, a:focus {
+    outline-color: #086068;
   }
 
   .borderdesign {

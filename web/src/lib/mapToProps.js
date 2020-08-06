@@ -118,7 +118,7 @@ export function mapGridToProps({ idTag, title, subtitle, leader, col, design, ca
 export function mapTileToProps({ title, cardImage, _key }) {
   return {
     title,
-    id: _key,
+    idTag: _key,
     image: cardImage?.image?.asset?.url,
     imageAlt: cardImage?.alt,
     imageFilename: cardImage?.image?.asset?.originalFilename,
@@ -210,5 +210,13 @@ export function mapMainFooterToProps({ address1, city, email, postalCode, provin
     postalCode,
     province,
     name,
+  };
+}
+
+export function mapMainNavToProps({ title, logo, menu }) {
+  return {
+    name: title,
+    logo: logo?.asset?.url,
+    menu,
   };
 }

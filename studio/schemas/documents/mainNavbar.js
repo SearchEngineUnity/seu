@@ -8,14 +8,21 @@ export default {
   __experimental_actions: ['update', 'publish'],
   fields: [
     {
+      title: 'Brand Name',
+      name: 'title',
+      type: 'string',
+    },
+    {
+      title: 'Brand logo',
+      name: 'logo',
+      type: 'image',
+    },
+    {
       name: 'menu',
       title: 'Menu',
       type: 'array',
       description: 'There should only be ONE Nav Logo',
       of: [
-        {
-          type: 'navLogo',
-        },
         {
           type: 'navJumpLink',
         },

@@ -27,7 +27,6 @@ const PaddedDiv = styled.div`
 `;
 
 function Tile1({ id, title, image, imageAlt, col }) {
-  console.log(id, title, image, imageAlt, col);
   return (
     <PaddedDiv className={`align-items-stretch ${col}`}>
       <Card className="borderdesign h-100 p-0">

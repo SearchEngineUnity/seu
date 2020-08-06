@@ -26,7 +26,6 @@ const PaddedDiv = styled.div`
 `;
 
 function Tile2({ id, title, image, imageAlt, col, imageFilename }) {
-  console.log(id, title, image, imageAlt, col);
   return (
     <PaddedDiv className={col}>
       <CardDeck className="">
