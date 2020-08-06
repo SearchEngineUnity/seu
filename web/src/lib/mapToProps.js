@@ -121,7 +121,6 @@ export function mapTileToProps({ title, cardImage, _key }) {
     idTag: _key,
     image: cardImage?.image?.asset?.url,
     imageAlt: cardImage?.alt,
-    imageFilename: cardImage?.image?.asset?.originalFilename,
   };
 }
 export function mapGuideCardToProps({ h1, slug, excerpt, cardImage, displayDate }) {
