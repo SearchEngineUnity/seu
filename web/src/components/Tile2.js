@@ -30,7 +30,7 @@ function Tile2({ id, title, image, imageAlt, col }) {
   console.log(id, title, image, imageAlt, col);
   return (
     <PaddedDiv className={col}>
-      <CardDeck className="">
+      <CardDeck>
         <Card className="border-0">
           {image && (
             <Card.Img
