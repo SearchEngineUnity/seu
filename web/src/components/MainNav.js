@@ -21,15 +21,16 @@ const CustomNav = styled(Nav)`
   margin-left: auto;
   color: #2c2142;
 
+  @media screen and (max-width: 991px) {
+    background: white;
+    overflow: hidden;
+    margin-left: -100px;
+    margin-right: -100px;
+  }
+
   &:hover {
     @media screen and (max-width: 991px) {
       background-color: #d4d2d9;
-    }
-  }
-
-  &:last-child {
-    @media screen and (max-width: 991px) {
-      margin-bottom: 1rem;
     }
   }
 `;
@@ -72,6 +73,14 @@ const CustomNavbar = styled(Navbar)`
   padding: 0 15px;
 `;
 
+const CustomCollapse = styled(Navbar.Collapse)`
+  @media screen and (max-width: 991px) {
+    overflow: hidden;
+    margin-left: -100px;
+    margin-right: -100px;
+  }
+`;
+
 function NavTypeA({ name, logo, menu }) {
   return (
     <GreyContainer fluid className="px-0">
@@ -80,13 +89,14 @@ function NavTypeA({ name, logo, menu }) {
           <Navbar.Brand className="my-3">
             <BrandImg alt={name} src={logo} className="d-inline-block" />
           </Navbar.Brand>
+          {/* still need to figure out toggle icon swap */}
           <CustomBurger aria-controls="basic-navbar-nav">
             <i className="fas fa-bars fa-2x" />
           </CustomBurger>
-          <Navbar.Collapse id="basic-navbar-nav">
-            {menu.map((item) => (
+          <CustomCollapse id="basic-navbar-nav">
+            {menu.map((item, index) => (
               <>
-                <hr />
+                {index === 0 ? null : <hr />}
                 <CustomNav className="py-3">
                   <Nav.Link key={item._key} href={`#${item.link}`}>
                     {item.isButton ? <StyledButton>{item.title}</StyledButton> : item.title}
@@ -94,7 +104,7 @@ function NavTypeA({ name, logo, menu }) {
                 </CustomNav>
               </>
             ))}
-          </Navbar.Collapse>
+          </CustomCollapse>
         </CustomNavbar>
       </Container>
     </GreyContainer>
