@@ -31,7 +31,7 @@ const StyledJumbo = styled(Jumbotron)`
 const PreH1 = styled.h1`
   white-space: pre-wrap;
   text-decoration: underline;
-  text-decoration-color: #10a7b6;
+  text-decoration-color: #0ba7b6;
 `;
 
 function Hero({ heroText, title, imageURL, id, backgroundColor }) {
