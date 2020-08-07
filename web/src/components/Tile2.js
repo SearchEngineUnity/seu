@@ -11,17 +11,17 @@ const PaddedDiv = styled.div`
   }
 
   &:nth-last-child(1) {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
   &:nth-last-child(2) {
     @media screen and (min-width: 576px) {
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
   }
   &:nth-last-child(3) {
     @media screen and (min-width: 992px) {
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
   }
 `;
