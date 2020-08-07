@@ -89,7 +89,7 @@ function NavTypeA({ name, logo, menu }) {
     setOpen(false);
     // scrollToElement(id);
     scrollToElement(id, {
-      duration: 600,
+      duration: 800,
     });
   };
 
