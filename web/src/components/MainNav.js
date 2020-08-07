@@ -96,7 +96,7 @@ function NavTypeA({ name, logo, menu }) {
   return (
     <GreyContainer fluid className="px-0">
       <Container className="align-self-center px-0">
-        <CustomNavbar collapseOnSelect expand="lg" className="text-center">
+        <CustomNavbar collapseOnSelect expand="md" className="text-center">
           <Navbar.Brand className="my-3">
             <BrandImg alt={name} src={logo} className="d-inline-block" />
           </Navbar.Brand>
