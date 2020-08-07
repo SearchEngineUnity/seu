@@ -108,11 +108,12 @@ function NavTypeA({ name, logo, menu }) {
             {menu.map((item, index) => (
               <>
                 {index === 0 ? null : <hr />}
-                <CustomNav className="py-3">
-                  {/* <Nav.Link key={item._key} href={`/#${item.link}`}>
-                    {item.isButton ? <StyledButton>{item.title}</StyledButton> : item.title}
-                  </Nav.Link> */}
-                  <a href={`#${item.link}`} onClick={() => jumpLinkOnClickHandler(`#${item.link}`)}>
+                <CustomNav>
+                  <a
+                    href={`#${item.link}`}
+                    onClick={() => jumpLinkOnClickHandler(`#${item.link}`)}
+                    className="py-3"
+                  >
                     {item.isButton ? <StyledButton>{item.title}</StyledButton> : item.title}
                   </a>
                 </CustomNav>

@@ -67,6 +67,11 @@ export default createGlobalStyle`
     color: #2C2142;
     font-weight: 700;
   }
+
+  a.active {
+    color: #2C2142;
+    font-weight: 700;
+  }
   
   a:visited {
     color: #2C2142;
@@ -102,21 +107,6 @@ export default createGlobalStyle`
 
   input, textara {
     border-color: #D4D2D9;
-  }
-
-  .navbar-light .navbar-nav .nav-link {
-    color: #2C2142;
-  }
-
-  .navbar-light .navbar-nav .nav-link:hover {
-    color: #2C2142;
-    @media screen and (min-width: 992px) {
-      text-decoration: underline;
-    }
-  }
-
-  .navbar-light .navbar-nav .nav-link.active {
-    color: #2C2142;
   }
 
   button:focus, a:focus {
