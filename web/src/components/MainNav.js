@@ -11,6 +11,7 @@ const GreyContainer = styled(Container)`
   top: 0;
   z-index: 100;
   box-shadow: 0px 4px 6px #00000029;
+  overflow: hidden;
 `;
 
 const BrandImg = styled.img`
@@ -29,6 +30,7 @@ const CustomNav = styled(Nav)`
     padding-left: 140.5px;
     margin-right: -140.5px;
     padding-right: 140.5px;
+    border-bottom: 2px solid #f2f2f2;
   }
 
   @media screen and (max-width: 575px) {
@@ -149,7 +151,7 @@ function NavTypeA({ name, logo, menu }) {
     setOpen(false);
     // scrollToElement(id);
     scrollToElement(id, {
-      duration: 800,
+      duration: 1000,
     });
   };
 
@@ -165,19 +167,16 @@ function NavTypeA({ name, logo, menu }) {
             {open ? <i className="fas fa-times fa-2x" /> : <i className="fas fa-bars fa-2x" />}
           </CustomBurger>
           <CustomCollapse id="basic-navbar-nav" in={open}>
-            {menu.map((item, index) => (
-              <>
-                {index === 0 ? null : <CustomHr />}
-                <CustomNav>
-                  <CustomA
-                    href={`#${item.link}`}
-                    onClick={() => jumpLinkOnClickHandler(`#${item.link}`)}
-                    className="py-3"
-                  >
-                    {item.isButton ? <StyledButton>{item.title}</StyledButton> : item.title}
-                  </CustomA>
-                </CustomNav>
-              </>
+            {menu.map((item) => (
+              <CustomNav>
+                <CustomA
+                  href={`#${item.link}`}
+                  onClick={() => jumpLinkOnClickHandler(`#${item.link}`)}
+                  className="py-3"
+                >
+                  {item.isButton ? <StyledButton>{item.title}</StyledButton> : item.title}
+                </CustomA>
+              </CustomNav>
             ))}
           </CustomCollapse>
         </CustomNavbar>
