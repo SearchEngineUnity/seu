@@ -168,7 +168,7 @@ function NavTypeA({ name, logo, menu }) {
           </CustomBurger>
           <CustomCollapse id="basic-navbar-nav" in={open}>
             {menu.map((item) => (
-              <CustomNav>
+              <CustomNav key={item.link}>
                 <CustomA
                   href={`#${item.link}`}
                   onClick={() => jumpLinkOnClickHandler(`#${item.link}`)}

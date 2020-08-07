@@ -27,7 +27,6 @@ const PaddedDiv = styled.div`
 `;
 
 function Tile3({ id, title, image, imageAlt, col }) {
-  console.log(id, title, image, imageAlt, col);
   return (
     <PaddedDiv className={col}>
       <Card className="border-0">
