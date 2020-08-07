@@ -116,4 +116,9 @@ export default createGlobalStyle`
   .borderdesign {
     border:2px solid #f2f2f2f2;
   }
+
+  @font-face {
+    font-family: 'Calibri';
+    font-display: swap;
+  }
 `;
