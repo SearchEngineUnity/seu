@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Navbar, Nav, Button } from 'react-bootstrap';
+import scrollToElement from 'scroll-to-element';
 import styled from 'styled-components';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const GreyContainer = styled(Container)`
   background-color: #f2f2f2;
@@ -83,6 +83,16 @@ const CustomCollapse = styled(Navbar.Collapse)`
 `;
 
 function NavTypeA({ name, logo, menu }) {
+  const [open, setOpen] = useState(false);
+
+  const jumpLinkOnClickHandler = (id) => {
+    setOpen(false);
+    // scrollToElement(id);
+    scrollToElement(id, {
+      duration: 600,
+    });
+  };
+
   return (
     <GreyContainer fluid className="px-0">
       <Container className="align-self-center px-0">
@@ -91,10 +101,10 @@ function NavTypeA({ name, logo, menu }) {
             <BrandImg alt={name} src={logo} className="d-inline-block" />
           </Navbar.Brand>
           {/* still need to figure out toggle icon swap */}
-          <CustomBurger aria-controls="basic-navbar-nav">
-            <i className="fas fa-bars fa-2x" />
+          <CustomBurger aria-controls="basic-navbar-nav" onClick={() => setOpen(!open)}>
+            {open ? <i className="fas fa-times fa-2x" /> : <i className="fas fa-bars fa-2x" />}
           </CustomBurger>
-          <CustomCollapse id="basic-navbar-nav">
+          <CustomCollapse id="basic-navbar-nav" in={open}>
             {menu.map((item, index) => (
               <>
                 {index === 0 ? null : <hr />}
@@ -102,14 +112,9 @@ function NavTypeA({ name, logo, menu }) {
                   {/* <Nav.Link key={item._key} href={`/#${item.link}`}>
                     {item.isButton ? <StyledButton>{item.title}</StyledButton> : item.title}
                   </Nav.Link> */}
-                  <AnchorLink
-                    to={`/#${item.link}`}
-                    title={item.title}
-                    className="stripped"
-                    stripHash
-                  >
+                  <a href={`#${item.link}`} onClick={() => jumpLinkOnClickHandler(`#${item.link}`)}>
                     {item.isButton ? <StyledButton>{item.title}</StyledButton> : item.title}
-                  </AnchorLink>
+                  </a>
                 </CustomNav>
               </>
             ))}

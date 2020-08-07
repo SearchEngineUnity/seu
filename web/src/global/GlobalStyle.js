@@ -80,6 +80,11 @@ export default createGlobalStyle`
   section:nth-child(n+2) {
     padding-top: 6.5rem;
     margin-top: -6.5rem;
+
+    @media screen and (max-width: 991px) {
+      padding-top: 18rem;
+      margin-top: -18rem;
+    }
   }
   
   .leader {
