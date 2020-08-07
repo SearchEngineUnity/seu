@@ -18,7 +18,6 @@ module.exports = {
     siteUrl,
   },
   plugins: [
-    'gatsby-plugin-anchor-links',
     `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     {
