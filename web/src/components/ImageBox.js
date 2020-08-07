@@ -11,7 +11,7 @@ const ImgContain = styled.img`
 `;
 
 function ImageBox({ image, alt }) {
-  return <ImgContain src={image} alt={alt} />;
+  return <ImgContain src={image} alt={alt} lazy="loading" />;
 }
 
 ImageBox.propTypes = {
