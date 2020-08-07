@@ -25,8 +25,19 @@ const CustomNav = styled(Nav)`
   @media screen and (max-width: 991px) {
     background: white;
     overflow: hidden;
-    margin-left: -100px;
-    margin-right: -100px;
+    margin-left: -140.5px;
+    padding-left: 140.5px;
+    margin-right: -140.5px;
+    padding-right: 140.5px;
+  }
+
+  @media screen and (max-width: 575px) {
+    background: white;
+    overflow: hidden;
+    margin-left: -81px;
+    padding-left: 81px;
+    margin-right: -81px;
+    padding-right: 81px;
   }
 
   &:hover {
@@ -77,8 +88,57 @@ const CustomNavbar = styled(Navbar)`
 const CustomCollapse = styled(Navbar.Collapse)`
   @media screen and (max-width: 991px) {
     overflow: hidden;
-    margin-left: -100px;
-    margin-right: -100px;
+    margin-left: -140.5px;
+    padding-left: 140.5px;
+    margin-right: -140.5px;
+    padding-right: 140.5px;
+  }
+
+  @media screen and (max-width: 575px) {
+    background: white;
+    overflow: hidden;
+    margin-left: -81px;
+    padding-left: 81px;
+    margin-right: -81px;
+    padding-right: 81px;
+  }
+`;
+
+const CustomA = styled.a`
+  @media screen and (max-width: 991px) {
+    overflow: hidden;
+    margin-left: -140.5px;
+    padding-left: 140.5px;
+    margin-right: -140.5px;
+    padding-right: 140.5px;
+  }
+
+  @media screen and (max-width: 575px) {
+    background: white;
+    overflow: hidden;
+    margin-left: -81px;
+    padding-left: 81px;
+    margin-right: -81px;
+    padding-right: 81px;
+  }
+`;
+
+const CustomHr = styled.hr`
+  @media screen and (max-width: 991px) {
+    overflow: hidden;
+    margin-left: -140.5px;
+    padding-left: 140.5px;
+    margin-right: -140.5px;
+    padding-right: 140.5px;
+  }
+
+  @media screen and (max-width: 575px) {
+    background: white;
+    overflow: hidden;
+    margin-left: -81px;
+    padding-left: 81px;
+    margin-right: -81px;
+    padding-right: 81px;
   }
 `;
 
@@ -107,15 +167,15 @@ function NavTypeA({ name, logo, menu }) {
           <CustomCollapse id="basic-navbar-nav" in={open}>
             {menu.map((item, index) => (
               <>
-                {index === 0 ? null : <hr />}
+                {index === 0 ? null : <CustomHr />}
                 <CustomNav>
-                  <a
+                  <CustomA
                     href={`#${item.link}`}
                     onClick={() => jumpLinkOnClickHandler(`#${item.link}`)}
                     className="py-3"
                   >
                     {item.isButton ? <StyledButton>{item.title}</StyledButton> : item.title}
-                  </a>
+                  </CustomA>
                 </CustomNav>
               </>
             ))}
