@@ -32,7 +32,11 @@ function Tile3({ id, title, image, imageAlt, col }) {
     <PaddedDiv className={col}>
       <Card className="border-0">
         {image && <Card.Img alt={imageAlt} variant="top" src={image} />}
-        {/* <Card.Body>{title && <Card.Title>{title}</Card.Title>}</Card.Body> */}
+        {title && (
+          <Card.Body>
+            <Card.Title>{title}</Card.Title>
+          </Card.Body>
+        )}
       </Card>
     </PaddedDiv>
   );
