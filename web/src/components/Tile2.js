@@ -11,34 +11,22 @@ const PaddedDiv = styled.div`
   }
 
   &:nth-last-child(1) {
-<<<<<<< Updated upstream
     margin-bottom: 0;
-=======
-    margin-bottom: 2rem;
->>>>>>> Stashed changes
   }
 
   &:nth-last-child(2) {
     @media screen and (min-width: 576px) {
-<<<<<<< Updated upstream
       margin-bottom: 0;
-=======
-      margin-bottom: 2rem;
->>>>>>> Stashed changes
     }
   }
   &:nth-last-child(3) {
     @media screen and (min-width: 992px) {
-<<<<<<< Updated upstream
       margin-bottom: 0;
-=======
-      margin-bottom: 2rem;
->>>>>>> Stashed changes
     }
   }
 `;
 
-function Tile2({ id, title, image, imageAlt, col }) {
+function Tile2({ title, image, imageAlt, col }) {
   return (
     <PaddedDiv className={col}>
       <CardDeck>

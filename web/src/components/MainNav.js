@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'gatsby';
 import { Container, Navbar, Nav, Button } from 'react-bootstrap';
 import scrollToElement from 'scroll-to-element';
 import styled from 'styled-components';
@@ -125,25 +126,6 @@ const CustomA = styled.a`
   }
 `;
 
-const CustomHr = styled.hr`
-  @media screen and (max-width: 991px) {
-    overflow: hidden;
-    margin-left: -140.5px;
-    padding-left: 140.5px;
-    margin-right: -140.5px;
-    padding-right: 140.5px;
-  }
-
-  @media screen and (max-width: 575px) {
-    background: white;
-    overflow: hidden;
-    margin-left: -81px;
-    padding-left: 81px;
-    margin-right: -81px;
-    padding-right: 81px;
-  }
-`;
-
 function NavTypeA({ name, logo, menu }) {
   const [open, setOpen] = useState(false);
 
@@ -155,12 +137,18 @@ function NavTypeA({ name, logo, menu }) {
     });
   };
 
+  const homeHandler = () => {
+    setOpen(false);
+  };
+
   return (
     <GreyContainer fluid className="px-0">
       <Container className="align-self-center px-0">
         <CustomNavbar collapseOnSelect expand="lg" className="text-center">
           <Navbar.Brand className="my-3">
-            <BrandImg alt={name} src={logo} className="d-inline-block" />
+            <Link to="/" onClick={() => homeHandler()}>
+              <BrandImg alt={name} src={logo} className="d-inline-block" />
+            </Link>
           </Navbar.Brand>
           {/* still need to figure out toggle icon swap */}
           <CustomBurger aria-controls="basic-navbar-nav" onClick={() => setOpen(!open)}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Jumbotron, Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import BlockContent from './block-contents/SimpleSerializer';
+import BlockContent from './block-contents/SeuLPSerializer';
 
 const Background = styled.div`
   background-image: url(${(props) => props.image});

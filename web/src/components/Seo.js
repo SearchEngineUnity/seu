@@ -64,8 +64,6 @@ function Seo({
       <meta name="twitter:title" content={twitterTitle} />
       <meta name="twitter:description" content={twitterDescription} />
       <meta name="twitter:image" content={ogImage} />
-      {/* remove robots for live website */}
-      <meta name="robots" content="noindex" />
       {(noindex || nofollow) && <meta name="robots" content={robots} />}
       {canonical && <link rel="canonical" href={canonical} />}
     </Helmet>
