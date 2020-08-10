@@ -9,18 +9,6 @@ export default createGlobalStyle`
     color: #2c2142;
   }
 
-  pre {
-    font: inherit;
-    color: inherit;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    white-space: pre-wrap;
-    overflow: inherit;
-  }
-
   html {
     font-size: 14px;
   }
@@ -115,10 +103,5 @@ export default createGlobalStyle`
 
   .borderdesign {
     border:2px solid #f2f2f2f2;
-  }
-
-  @font-face {
-    font-family: 'Calibri';
-    font-display: swap;
   }
 `;
