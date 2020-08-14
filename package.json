@@ -51,7 +51,5 @@
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2"
   },
-  "dependencies": {
-    "gatsby-plugin-remove-serviceworker": "^1.0.0"
-  }
+  "dependencies": {}
 }
