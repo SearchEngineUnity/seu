@@ -91,5 +91,12 @@ module.exports = {
         sitemapSize: 5000,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: process.env.GTM_ID,
+        includeInDevelopment: false,
+      },
+    },
   ],
 };
