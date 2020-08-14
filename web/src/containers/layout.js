@@ -13,7 +13,6 @@ import MainFooter from '../components/MainFooter';
 import MainNav from '../components/MainNav';
 import { mapMainNavToProps, mapMainFooterToProps } from '../lib/mapToProps';
 import GlobalStyle from '../global/GlobalStyle';
-import favicon from '../images/SEU-favicon-transparent.png';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -52,7 +51,6 @@ const Layout = ({ children }) => {
       <Helmet>
         <script src="https://kit.fontawesome.com/e4a269ffa7.js" crossOrigin="anonymous" />
         <link rel="stylesheet" href="https://use.typekit.net/mwy2rpa.css" />
-        <link rel="icon" href={favicon} />
       </Helmet>
       <MainNav {...mapMainNavToProps(data.sanityMainNavbar)} />
       <GlobalStyle />
