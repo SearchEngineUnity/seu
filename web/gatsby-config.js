@@ -41,18 +41,18 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `search-engine-unity`,
-    //     short_name: `seu`,
-    //     start_url: `/`,
-    //     lang: `en`,
-    //     display: `standalone`,
-    //     icon: `src/images/SEU-favicon-transparent.png`, // This path is relative to the root of the site.
-    //   },
-    // },
-    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Search Engine Unity`,
+        short_name: `seu`,
+        start_url: `/`,
+        lang: `en`,
+        display: `standalone`,
+        icon: `src/images/SEU-favicon-transparent.png`, // This path is relative to the root of the site.
+      },
+    },
+    `gatsby-plugin-remove-serviceworker`,
     {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
