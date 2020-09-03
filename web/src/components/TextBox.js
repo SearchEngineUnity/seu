@@ -7,9 +7,10 @@ const Subtitle = styled.p`
   font-weight: bold;
 `;
 
-const Icon = styled.img`
+const Icon = styled.div`
   height: 2.5rem;
   width: 2.5rem;
+  display: inline-block;
 `;
 
 function TextBox({ leaderIcon, leaderAlt, leaderText, title, subtitle, text }) {
@@ -17,7 +18,11 @@ function TextBox({ leaderIcon, leaderAlt, leaderText, title, subtitle, text }) {
     <>
       {leaderText && (
         <p className="leader">
-          {leaderIcon && <Icon src={leaderIcon} alt={leaderAlt} />}
+          {leaderIcon && (
+            <Icon>
+              <img src={leaderIcon} alt={leaderAlt} />
+            </Icon>
+          )}
           <span> {leaderText}</span>
         </p>
       )}

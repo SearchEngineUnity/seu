@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const ImgContain = styled.img`
+const ImgContain = styled.div`
   width: 100%;
   height: auto;
   position: relative;
@@ -11,7 +11,11 @@ const ImgContain = styled.img`
 `;
 
 function ImageBox({ image, alt }) {
-  return <ImgContain src={image} alt={alt} />;
+  return (
+    <ImgContain>
+      <img src={image} alt={alt} />
+    </ImgContain>
+  );
 }
 
 ImageBox.propTypes = {

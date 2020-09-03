@@ -6,4 +6,4 @@
 
 // You can delete this file if you're not using it
 import './src/global/cssReset.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
