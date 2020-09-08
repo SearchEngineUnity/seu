@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -11,11 +11,13 @@ const ImgContain = styled.div`
 `;
 
 function ImageBox({ image, alt }) {
-  return (
-    <ImgContain>
-      <img src={image} alt={alt} />
-    </ImgContain>
-  );
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    setVisible(true);
+  });
+
+  return <ImgContain>{visible && <img src={image} alt={alt} />}</ImgContain>;
 }
 
 ImageBox.propTypes = {
