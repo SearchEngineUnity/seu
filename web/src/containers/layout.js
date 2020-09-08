@@ -52,8 +52,8 @@ const Layout = ({ children }) => {
         <script src="https://kit.fontawesome.com/e4a269ffa7.js" crossOrigin="anonymous" />
         <link rel="stylesheet" href="https://use.typekit.net/mwy2rpa.css" />
       </Helmet>
-      <MainNav {...mapMainNavToProps(data.sanityMainNavbar)} />
       <GlobalStyle />
+      <MainNav {...mapMainNavToProps(data.sanityMainNavbar)} />
       <>{children}</>
       <MainFooter {...mapMainFooterToProps(data.sanityCompanyInfo)} />
     </>
