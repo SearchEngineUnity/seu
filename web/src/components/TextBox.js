@@ -27,7 +27,7 @@ function TextBox({ leaderIcon, leaderAlt, leaderText, title, subtitle, text }) {
               <img src={leaderIcon} alt={leaderAlt} />
             </Icon>
           )}
-          <span> {leaderText}</span>
+          {` ${leaderText}`}
         </Leader>
       )}
       {title && <h2>{title}</h2>}
