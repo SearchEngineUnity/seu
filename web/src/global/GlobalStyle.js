@@ -79,10 +79,7 @@ export default createGlobalStyle`
       margin-top: -18rem;
     }
   }
-  
-  .leader {
-    font-size: 1.75rem;
-  }
+
   .subtitle {
     font-size: 1.5rem;
   }
