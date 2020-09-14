@@ -147,7 +147,7 @@ function NavTypeA({ name, logo, menu }) {
         <CustomNavbar collapseOnSelect expand="lg" className="text-center">
           <Navbar.Brand className="my-3">
             <Link to="/" onClick={() => homeHandler()}>
-              <BrandImg alt={name} src={logo} className="d-inline-block" />
+              <BrandImg loading="eager" alt={name} src={logo} className="d-inline-block" />
             </Link>
           </Navbar.Brand>
           {/* still need to figure out toggle icon swap */}

@@ -1,38 +1,19 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
+  html {
+    font-size: 14px;
+  }
+
   body {
-    margin: 0 auto;
     font-family: rubrik-edge-new,sans-serif;
+    margin: 0 auto;
     font-weight: 400;
     font-style: normal;
     color: #2c2142;
   }
 
-  html {
-    font-size: 14px;
-  }
-
-  .form-control:focus, .form-control:active, .form-control:hover {
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    border: #0a7b86 solid 1px;
-  }
-
-  @media screen and (min-width: 576px) {
-    html {
-      font-size: 16px;
-    }
-  }
-  
-  @media screen and (min-width: 992px) {
-    html {
-      font-size: 18px;
-    }
-  }
-  
   h1, h2 {
-    font-family: rubrik-edge-new,sans-serif;
     font-weight: 700;
     font-style: normal;
   }
@@ -80,10 +61,6 @@ export default createGlobalStyle`
     }
   }
 
-  .subtitle {
-    font-size: 1.5rem;
-  }
-
   hr {
     border-bottom: 1px solid #F2F2F2;
     background-color: #F2F2F2;
@@ -100,5 +77,31 @@ export default createGlobalStyle`
 
   .borderdesign {
     border:2px solid #f2f2f2f2;
+  }
+
+  .leader {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .form-control:focus, .form-control:active, .form-control:hover {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border: #0a7b86 solid 1px;
+  }
+
+  @media screen and (min-width: 576px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  
+  @media screen and (min-width: 992px) {
+    html {
+      font-size: 18px;
+    }
   }
 `;
