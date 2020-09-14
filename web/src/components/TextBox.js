@@ -22,14 +22,14 @@ function TextBox({ leaderIcon, leaderAlt, leaderText, title, subtitle, text }) {
   return (
     <>
       {leaderText && (
-        <p className="leader">
+        <div className="leader">
           {leaderIcon && (
             <Icon>
               <img loading="lazy" src={leaderIcon} alt={leaderAlt} />
             </Icon>
           )}
           {leaderText}
-        </p>
+        </div>
       )}
       {title && <h2>{title}</h2>}
       {subtitle && <Subtitle>{subtitle}</Subtitle>}
