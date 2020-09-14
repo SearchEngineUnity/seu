@@ -33,7 +33,6 @@ export default createGlobalStyle`
   }
   
   h1, h2 {
-    font-family: rubrik-edge-new,sans-serif;
     font-weight: 700;
     font-style: normal;
   }
