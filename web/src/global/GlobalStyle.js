@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   html {
-    font-family: 'Ranchers', cursive;
+    font-family: rubrik-edge-new,sans-serif;
     font-size: 14px;
   }
 
