@@ -14,22 +14,22 @@ const Icon = styled.div`
   display: inline-block;
 `;
 
-const Leader = styled.p`
-  font-size: 1.75rem;
-`;
+// const Leader = styled.p`
+//   font-size: 1.75rem;
+// `;
 
 function TextBox({ leaderIcon, leaderAlt, leaderText, title, subtitle, text }) {
   return (
     <>
       {leaderText && (
-        <Leader>
+        <p className="leader">
           {leaderIcon && (
             <Icon>
               <img loading="lazy" src={leaderIcon} alt={leaderAlt} />
             </Icon>
           )}
           {leaderText}
-        </Leader>
+        </p>
       )}
       {title && <h2>{title}</h2>}
       {subtitle && <Subtitle>{subtitle}</Subtitle>}
