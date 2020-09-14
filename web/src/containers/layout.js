@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Helmet>
-        <script src="https://kit.fontawesome.com/e4a269ffa7.js" crossOrigin="anonymous" />
+        <script rel="preload" src="https://kit.fontawesome.com/e4a269ffa7.js" crossOrigin="anonymous" />
         <script>
           {`(function(d) {
     var config = {
