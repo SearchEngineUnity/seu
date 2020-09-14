@@ -24,9 +24,9 @@ function Grid({ id, leader, title, subtitle, col, design, cards }) {
 
   return (
     <Container as="section" id={id}>
-      <h3 className="text-center">{leader}</h3>
+      <p className="text-center leader">{leader}</p>
       <h2 className="text-center">{title}</h2>
-      <h4 className="text-center">{subtitle}</h4>
+      <p className="text-center subtitle">{subtitle}</p>
       <Row>{cards.map((card) => componentTypeSwitch(design, col, card))}</Row>
     </Container>
   );

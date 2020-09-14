@@ -18,14 +18,14 @@ function TextBox({ leaderIcon, leaderAlt, leaderText, title, subtitle, text }) {
   return (
     <>
       {leaderText && (
-        <h3>
+        <div className="leader">
           {leaderIcon && (
             <Icon>
               <img loading="lazy" src={leaderIcon} alt={leaderAlt} />
             </Icon>
           )}
           {leaderText}
-        </h3>
+        </div>
       )}
       {title && <h2>{title}</h2>}
       {subtitle && <Subtitle>{subtitle}</Subtitle>}
