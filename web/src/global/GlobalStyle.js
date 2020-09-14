@@ -2,8 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   html {
-    font-family: rubrik-edge-new,sans-serif;
-    font-display: auto;
+    font-family: 'Ranchers', cursive;
     font-size: 14px;
   }
 
