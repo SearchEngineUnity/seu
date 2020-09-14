@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
   html {
     font-family: rubrik-edge-new,sans-serif;
+    font-display: auto;
     font-size: 14px;
   }
 
@@ -86,7 +87,7 @@ export default createGlobalStyle`
   .subtitle {
     font-size: 1.5rem;
   }
-  
+
   .form-control:focus, .form-control:active, .form-control:hover {
     box-shadow: none;
     -webkit-box-shadow: none;
