@@ -13,7 +13,7 @@ const ImgContain = styled.div`
 function ImageBox({ image, alt }) {
   return (
     <ImgContain>
-      <img src={image} alt={alt} />
+      <img loading="lazy" src={image} alt={alt} />
     </ImgContain>
   );
 }
