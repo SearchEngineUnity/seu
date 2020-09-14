@@ -10,6 +10,7 @@ const Subtitle = styled.p`
 const Icon = styled.div`
   height: 2.5rem;
   width: 2.5rem;
+  margin-right: 0.5rem;
   display: inline-block;
 `;
 
@@ -24,10 +25,10 @@ function TextBox({ leaderIcon, leaderAlt, leaderText, title, subtitle, text }) {
         <Leader>
           {leaderIcon && (
             <Icon>
-              <img src={leaderIcon} alt={leaderAlt} />
+              <img loading="lazy" src={leaderIcon} alt={leaderAlt} />
             </Icon>
           )}
-          {` ${leaderText}`}
+          {leaderText}
         </Leader>
       )}
       {title && <h2>{title}</h2>}

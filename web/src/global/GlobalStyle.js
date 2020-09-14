@@ -80,6 +80,10 @@ export default createGlobalStyle`
     }
   }
 
+  .leader {
+    font-size: 1.75rem;
+  }
+
   .subtitle {
     font-size: 1.5rem;
   }
