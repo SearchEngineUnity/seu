@@ -49,8 +49,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <Helmet>
-        <script rel="preload" src="https://kit.fontawesome.com/e4a269ffa7.js" crossOrigin="anonymous" />
-        <script>
+        <script rel="preload" src="https://kit.fontawesome.com/e4a269ffa7.js" crossOrigin="anonymous" async />
+        <script> 
           {`(function(d) {
     var config = {
       kitId: 'mwy2rpa',
