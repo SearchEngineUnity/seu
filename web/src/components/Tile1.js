@@ -31,7 +31,7 @@ function Tile1({ title, image, imageAlt, col }) {
     <PaddedDiv className={`align-items-stretch ${col}`}>
       <Card className="borderdesign h-100 p-0">
         {image && (
-          <Card.Img alt={imageAlt} className="w-50 h-auto mx-auto" variant="top" src={image} />
+          <Card.Img loading="lazy" alt={imageAlt} className="w-50 h-auto mx-auto" variant="top" src={image} />
         )}
         <Card.Body className="p-0">
           {title && (

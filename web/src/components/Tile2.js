@@ -33,6 +33,7 @@ function Tile2({ title, image, imageAlt, col }) {
         <Card className="border-0">
           {image && (
             <Card.Img
+              loading="lazy"
               alt={imageAlt}
               className="rounded-circle w-50 mx-auto"
               variant="top"

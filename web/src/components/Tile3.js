@@ -30,7 +30,7 @@ function Tile3({ id, title, image, imageAlt, col }) {
   return (
     <PaddedDiv className={col}>
       <Card className="border-0">
-        {image && <Card.Img alt={imageAlt} variant="top" src={image} />}
+        {image && <Card.Img loading="lazy" alt={imageAlt} variant="top" src={image} />}
         {title && (
           <Card.Body>
             <Card.Title>{title}</Card.Title>
