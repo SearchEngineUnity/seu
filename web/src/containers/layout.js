@@ -66,7 +66,7 @@ const Layout = ({ children }) => {
   })(document);`}
         </script> */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Ranchers&family=Roboto:wght@100&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Ranchers&amp;family=Roboto:wght@100&amp;display=swap"
           rel="stylesheet"
         />
       </Helmet>
