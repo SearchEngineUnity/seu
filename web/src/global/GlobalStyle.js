@@ -2,11 +2,11 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   html {
-    font-family: rubrik-edge-new,sans-serif;
     font-size: 14px;
   }
 
   body {
+    font-family: rubrik-edge-new,sans-serif;
     margin: 0 auto;
     font-weight: 400;
     font-style: normal;
@@ -85,6 +85,7 @@ export default createGlobalStyle`
 
   .subtitle {
     font-size: 1.5rem;
+    color: red;
   }
 
   .form-control:focus, .form-control:active, .form-control:hover {
