@@ -3,8 +3,6 @@ import { createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
   body {
     margin: 0 auto;
-
-    font-family: 'Ranchers', cursive;
     font-weight: 400;
     font-style: normal;
     color: #2c2142;
