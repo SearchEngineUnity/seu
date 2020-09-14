@@ -3,10 +3,6 @@ import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Subtitle = styled.p`
-  font-size: 1.75rem;
-`;
-
 const StyledLabel = styled(Form.Label)`
   font-weight: bold;
 `;
@@ -90,7 +86,7 @@ function CtaForm({ id, title, subtitle, form }) {
       <Row>
         <Col className="mx-auto" lg={8}>
           <h2 className="text-center">{title}</h2>
-          {subtitle && <Subtitle className="text-center">{subtitle}</Subtitle>}
+          {subtitle && <h3 className="text-center">{subtitle}</h3>}
           <Form
             name={form.name}
             method="POST"

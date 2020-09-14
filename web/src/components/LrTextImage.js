@@ -6,10 +6,6 @@ import TextBox from './TextBox';
 import ImageBox from './ImageBox';
 import { mapTextBoxToProps, mapImageBoxToProps } from '../lib/mapToProps';
 
-const Subtitle = styled.p`
-  font-size: 1.75rem;
-`;
-
 const PaddedRow = styled(Row)`
   margin: 0 -15px 3rem -15px;
 `;
@@ -24,7 +20,7 @@ function LrTextImage({ id, title, subtitle, order, textDesign, set }) {
   return (
     <Container id={id} as="section">
       {title && <h2 className="text-center">{title}</h2>}
-      {subtitle && <Subtitle className="text-center">{subtitle}</Subtitle>}
+      {subtitle && <h3 className="text-center">{subtitle}</h3>}
 
       {set.map((el, index) => {
         if ((!order && (index === 0 || index % 2 === 0)) || (order && index % 2 !== 0)) {

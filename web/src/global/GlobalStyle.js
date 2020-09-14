@@ -85,7 +85,6 @@ export default createGlobalStyle`
 
   .subtitle {
     font-size: 1.5rem;
-    color: red;
   }
 
   .form-control:focus, .form-control:active, .form-control:hover {
