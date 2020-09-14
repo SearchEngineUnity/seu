@@ -175,11 +175,13 @@ export default ({ data }) => {
           const { _type } = segment;
           switch (_type) {
             case 'hero':
-              return <Hero key={segment._key} {...mapHeroToProps(segment)} />;
+              return null;
+            // return <Hero key={segment._key} {...mapHeroToProps(segment)} />;
             case 'grid':
               return <Grid key={segment._key} {...mapGridToProps(segment)} />;
             case 'lrTextImage':
-              return <LrTextImage key={segment._key} {...mapLrTextImageToProps(segment)} />;
+              return null;
+            // return <LrTextImage key={segment._key} {...mapLrTextImageToProps(segment)} />;
             case 'ctaForm':
               return <CtaForm key={segment._key} {...mapCtaFormToProps(segment)} />;
             default:
