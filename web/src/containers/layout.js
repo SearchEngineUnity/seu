@@ -66,6 +66,8 @@ const Layout = ({ children }) => {
   })(document);`}
         </script> */}
         <link rel="preload" as="font" href="https://use.typekit.net/mwy2rpa.css" />
+        <link rel="preload" as="style" href="../../global/cssReset.css" />
+        <link rel="preload" as="style" href="../../global/bootstrap.min.css" />
       </Helmet>
       <GlobalStyle />
       <MainNav {...mapMainNavToProps(data.sanityMainNavbar)} />
