@@ -18,9 +18,9 @@ function MainFooter({ address, city, email, postalCode, province, name }) {
         <p>
           © {new Date().getFullYear()} {name}
         </p>
-        <p>
+        {/* <p>
           {address} {city}, {province} {postalCode}
-        </p>
+        </p> */}
         <a href={`mailto: ${email}`}>{email}</a>
       </Container>
     </Footer>
