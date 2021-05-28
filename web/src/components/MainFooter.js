@@ -8,20 +8,20 @@ const Footer = styled.footer`
   font-size: 12px;
   color: #2c2142;
   line-height: 0px;
-  padding: 12px;
+  padding: 16px;
 `;
 
 function MainFooter({ address, city, email, postalCode, province, name }) {
   return (
     <Footer>
       <Container>
-        <p>
+        <div>
           © {new Date().getFullYear()} {name}
-        </p>
-        <p>
+        </div>
+        {/* <p>
           {address} {city}, {province} {postalCode}
-        </p>
-        <a href={`mailto: ${email}`}>{email}</a>
+        </p> */}
+        {/* <a href={`mailto: ${email}`}>{email}</a> */}
       </Container>
     </Footer>
   );

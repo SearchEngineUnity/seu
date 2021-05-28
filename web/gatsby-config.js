@@ -60,6 +60,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        sitemapSize: 5000,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         resolveEnv: () => NETLIFY_ENV,
@@ -83,12 +89,6 @@ module.exports = {
             host: null,
           },
         },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        sitemapSize: 5000,
       },
     },
     {
