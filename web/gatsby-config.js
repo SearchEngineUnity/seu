@@ -83,6 +83,11 @@ module.exports = {
             sitemap: null,
             host: null,
           },
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
         },
       },
     },
