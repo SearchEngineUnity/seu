@@ -36,14 +36,7 @@ export const query = graphql`
             cardImage {
               alt
               image {
-                asset {
-                  fluid {
-                    src
-                  }
-                  url
-                  extension
-                  originalFilename
-                }
+                _rawAsset(resolveReferences: { maxDepth: 10 })
               }
             }
           }
@@ -75,13 +68,7 @@ export const query = graphql`
             imageBox {
               alt
               image {
-                asset {
-                  fluid {
-                    src
-                  }
-                  url
-                  extension
-                }
+                _rawAsset(resolveReferences: { maxDepth: 10 })
               }
             }
             _key
@@ -90,13 +77,7 @@ export const query = graphql`
               leaderIcon {
                 alt
                 image {
-                  asset {
-                    fluid {
-                      src
-                    }
-                    url
-                    extension
-                  }
+                  _rawAsset(resolveReferences: { maxDepth: 10 })
                 }
               }
               leaderText
@@ -165,7 +146,7 @@ export const query = graphql`
     }
   }
 `;
-export default ({ data }) => {
+const StructuredPage = ({ data }) => {
   const type = 'page';
   return (
     <Layout>
@@ -190,3 +171,5 @@ export default ({ data }) => {
     </Layout>
   );
 };
+
+export default StructuredPage;

@@ -119,7 +119,7 @@ export function mapTileToProps({ title, cardImage, _key }) {
   return {
     title,
     idTag: _key,
-    image: cardImage?.image?.asset?.url,
+    image: cardImage?.image?._rawAsset?.url,
     imageAlt: cardImage?.alt,
   };
 }
@@ -128,9 +128,9 @@ export function mapGuideCardToProps({ h1, slug, excerpt, cardImage, displayDate 
     title: h1,
     date: displayDate,
     excerpt,
-    image: cardImage?.mainImage?.image?.asset?.fluid,
+    image: cardImage?.mainImage?.image?._rawAsset?.fluid,
     imageAlt: cardImage?.mainImage?.alt,
-    imageFilename: cardImage?.mainImage?.image?.asset?.originalFilename,
+    imageFilename: cardImage?.mainImage?.image?._rawAsset?.originalFilename,
     url: `/${slug.current}`,
   };
 }
@@ -185,7 +185,7 @@ export function mapLrTextImageToProps({ idTag, title, subtitle, order, textDesig
 
 export function mapTextBoxToProps({ leaderIcon, leaderText, title, subtitle, _rawText }) {
   return {
-    leaderIcon: leaderIcon?.image?.asset?.url,
+    leaderIcon: leaderIcon?.image?._rawAsset?.url,
     leaderAlt: leaderIcon?.alt,
     leaderText,
     title,
@@ -196,7 +196,7 @@ export function mapTextBoxToProps({ leaderIcon, leaderText, title, subtitle, _ra
 
 export function mapImageBoxToProps({ alt, image }) {
   return {
-    image: image?.asset?.url,
+    image: image?._rawAsset?.url,
     alt,
   };
 }
