@@ -10,6 +10,7 @@ async function creteStructuredPages(actions, graphql) {
             slug {
               current
             }
+            id
           }
         }
       }
@@ -21,6 +22,7 @@ async function creteStructuredPages(actions, graphql) {
     actions.createPage({
       path: page.node.slug.current === '/' ? '/' : `/${page.node.slug.current}`,
       component: path.resolve(`./src/templates/structuredPage.js`),
+      ownerNodeId: page.node.id,
       context: {
         slug: page.node.slug.current,
       },
