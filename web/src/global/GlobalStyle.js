@@ -6,7 +6,7 @@ export default createGlobalStyle`
   }
 
   body {
-    font-family: rubrik-edge-new,sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0 auto;
     font-weight: 400;
     font-style: normal;
