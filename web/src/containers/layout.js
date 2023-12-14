@@ -51,7 +51,7 @@ const Layout = ({ children }) => {
       <Helmet>
         <script
           rel="preload"
-          src="https://kit.fontawesome.com/e4a269ffa7.js"
+          src="https://kit.fontawesome.com/cab226a9e9.js"
           crossOrigin="anonymous"
           async
         />
